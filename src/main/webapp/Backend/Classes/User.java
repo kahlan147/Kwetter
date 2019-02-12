@@ -26,6 +26,7 @@ public class User {
     private List<User> following;
 
     // <editor-fold defaultstate="collapsed" desc="Gets Sets">
+
     public String getName() {
         return name;
     }
@@ -83,8 +84,7 @@ public class User {
     }
 
     // </editor-fold>
-
-
+    
     public User(String name, String password){
         this.name = name;
         this.password = password;

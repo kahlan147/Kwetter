@@ -1,6 +1,7 @@
 package main.webapp.Backend;
 
-import javax.ejb.Stateful;
+import main.webapp.Backend.Classes.User;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
