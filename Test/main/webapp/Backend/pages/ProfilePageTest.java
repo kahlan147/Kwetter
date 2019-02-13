@@ -2,7 +2,8 @@ package main.webapp.Backend.pages;
 
 import main.webapp.Backend.Classes.Post;
 import main.webapp.Backend.Classes.User;
-import main.webapp.MockData.MockDatabase;
+import main.webapp.DAO.Database;
+import main.webapp.DAO.MockData.MockDatabase;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,7 +16,7 @@ import static org.junit.Assert.*;
  */
 public class ProfilePageTest {
 
-    MockDatabase database;
+    Database database;
 
     @Before
     public void setUp() throws Exception {

@@ -15,3 +15,7 @@ get tweets of self and following users
 register
 logout
 login
+
+
+///Used sources
+DAO - https://www.baeldung.com/java-dao-pattern
