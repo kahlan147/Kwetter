@@ -1,11 +1,11 @@
-package main.webapp.Backend;
+package main.webapp.Backend.Classes;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.sql.Date;
-import java.sql.Time;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,20 +16,20 @@ import java.util.UUID;
 public class Post {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
-    private String text;
+    private String message;
     private Date date;
-    private Time time;
     private boolean isReaction;
     private User poster;
     private List<Post> reactions;
 
     //<editor-fold defaultstate="collapsed" desc="Gets Sets">
-    public String getText() {
-        return text;
+
+    public String getMessage() {
+        return message;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public Date getDate() {
@@ -40,19 +40,11 @@ public class Post {
         this.date = date;
     }
 
-    public Time getTime() {
-        return time;
-    }
-
-    public void setTime(Time time) {
-        this.time = time;
-    }
-
-    public boolean isReaction() {
+    public boolean getIsReaction() {
         return isReaction;
     }
 
-    public void setReaction(boolean reaction) {
+    public void setIsReaction(boolean reaction) {
         isReaction = reaction;
     }
 
@@ -62,15 +54,23 @@ public class Post {
 
     public void setPoster(User poster) {
         this.poster = poster;
+        poster.addToPosts(this);
     }
 
     public void addToReactions(Post post){
         reactions.add(post);
     }
+
+    public List<Post> getReactions(){
+        return reactions;
+    }
+
     //</editor-fold>
 
-    public Post(){
-
+    public Post(String message){
+        reactions = new ArrayList<>();
+        setMessage(message);
+        setDate(new Date());
     }
 
 }
