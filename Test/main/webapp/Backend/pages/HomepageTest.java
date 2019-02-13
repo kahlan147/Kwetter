@@ -3,6 +3,7 @@ package main.webapp.Backend.pages;
 import main.webapp.Backend.Classes.Post;
 import main.webapp.Backend.Classes.User;
 import main.webapp.DAO.Database;
+import main.webapp.DAO.MockData.MockDaoDatabase;
 import main.webapp.DAO.MockData.MockDatabase;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +21,7 @@ public class HomepageTest {
 
     @Before
     public void setUp() throws Exception {
-        database = new MockDatabase();
+        database = new MockDaoDatabase();
     }
 
     @Test

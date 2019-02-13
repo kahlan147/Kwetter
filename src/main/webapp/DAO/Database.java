@@ -10,8 +10,8 @@ import java.util.List;
  */
 public interface Database {
 
-    User getUser(int index);
-    Post getPost(int index);
+    User getUser(long index);
+    Post getPost(long index);
     List<User> getAllUsers();
     List<Post> getAllPosts();
 }
