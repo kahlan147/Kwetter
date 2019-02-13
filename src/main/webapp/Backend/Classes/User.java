@@ -1,4 +1,4 @@
-package main.webapp.Backend;
+package main.webapp.Backend.Classes;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,6 +24,7 @@ public class User {
     private boolean isMod;
     private List<User> followers;
     private List<User> following;
+    private List<Post> posts;
 
     // <editor-fold defaultstate="collapsed" desc="Gets Sets">
 
@@ -79,17 +80,46 @@ public class User {
         followers.add(user);
     }
 
+    public List<User> getAllFollowers(){
+        return followers;
+    }
+
     public void addToFollowing(User user){
         following.add(user);
+        user.addToFollowers(this);
+    }
+
+    public List<User> getAllFollowing(){
+        return following;
+    }
+
+    public void addToPosts(Post post){
+        posts.add(post);
+    }
+
+    public List<Post> getAllPosts(){
+        return posts;
+    }
+
+    public List<Post> getLastPosts(int amount){
+        List<Post> lastPosts = new ArrayList<>();
+        if(amount > posts.size()){
+            amount = posts.size();
+        }
+        for(int x = 0; x < amount; x++){
+            lastPosts.add(posts.get(posts.size()-amount));
+        }
+        return lastPosts;
     }
 
     // </editor-fold>
-    
+
     public User(String name, String password){
-        this.name = name;
-        this.password = password;
+        setName(name);
+        setPassword(password);
         followers = new ArrayList<>();
         following = new ArrayList<>();
+        posts = new ArrayList<>();
     }
 
 }
