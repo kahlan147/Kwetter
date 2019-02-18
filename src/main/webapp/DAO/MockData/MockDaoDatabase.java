@@ -4,12 +4,10 @@ import main.webapp.Backend.Classes.Post;
 import main.webapp.Backend.Classes.User;
 import main.webapp.DAO.Dao;
 import main.webapp.DAO.Database;
-import main.webapp.DAO.PostDao;
-import main.webapp.DAO.UserDao;
+import main.webapp.DAO.PostDaoImpl;
+import main.webapp.DAO.UserDaoImpl;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 
 /**
@@ -21,8 +19,8 @@ public class MockDaoDatabase implements Database {
     private Dao postDao;
 
     public MockDaoDatabase(){
-        userDao = new UserDao();
-        postDao = new PostDao();
+        userDao = new UserDaoImpl();
+        postDao = new PostDaoImpl();
         generateUsers();
         generatePosts();
     }

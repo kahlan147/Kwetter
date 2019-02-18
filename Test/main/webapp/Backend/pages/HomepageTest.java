@@ -21,7 +21,7 @@ public class HomepageTest {
 
     @Before
     public void setUp() throws Exception {
-        database = new MockDaoDatabase();
+        database = new MockDatabase();
     }
 
     @Test

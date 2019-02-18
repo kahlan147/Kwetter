@@ -73,4 +73,23 @@ public class Post {
         setDate(new Date());
     }
 
+    public Post(String message, User user){
+        reactions = new ArrayList<>();
+        setMessage(message);
+        setPoster(user);
+    }
+
+    public Post(String message, Date date){
+        reactions = new ArrayList<>();
+        setMessage(message);
+        setDate(date);
+    }
+
+    public Post(String message, User user, Date date){
+        reactions = new ArrayList<>();
+        setMessage(message);
+        setDate(date);
+        setPoster(user);
+    }
+
 }

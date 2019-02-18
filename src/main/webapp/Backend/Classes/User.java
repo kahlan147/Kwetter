@@ -28,6 +28,14 @@ public class User {
 
     // <editor-fold defaultstate="collapsed" desc="Gets Sets">
 
+    public void setId(long id){
+        this.id=id;
+    }
+
+    public long getId(){
+        return id;
+    }
+
     public String getName() {
         return name;
     }
@@ -80,6 +88,10 @@ public class User {
         followers.add(user);
     }
 
+    public void removeFromFollowers(User user){
+        followers.remove(user);
+    }
+
     public List<User> getAllFollowers(){
         return followers;
     }
@@ -87,6 +99,11 @@ public class User {
     public void addToFollowing(User user){
         following.add(user);
         user.addToFollowers(this);
+    }
+
+    public void removeFromFollowing(User user){
+        following.remove(user);
+        user.removeFromFollowers(this);
     }
 
     public List<User> getAllFollowing(){
@@ -106,8 +123,8 @@ public class User {
         if(amount > posts.size()){
             amount = posts.size();
         }
-        for(int x = 0; x < amount; x++){
-            lastPosts.add(posts.get(posts.size()-amount));
+        for(int x = posts.size(); x < posts.size()-amount; x--){
+            lastPosts.add(posts.get(x));
         }
         return lastPosts;
     }
