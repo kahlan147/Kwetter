@@ -1,9 +1,9 @@
-package main.webapp.MockData;
+package main.webapp.DAO.MockData;
 
 import main.webapp.Backend.Classes.Post;
 import main.webapp.Backend.Classes.User;
+import main.webapp.DAO.Database;
 
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -11,9 +11,9 @@ import java.util.Random;
 /**
  * Created by Niels Verheijen on 13/02/2019.
  */
-public class MockDatabase {
-    public List<User> users;
-    public List<Post> posts;
+public class MockDatabase implements Database {
+    private List<User> users;
+    private List<Post> posts;
 
     public MockDatabase(){
         users = new ArrayList<>();
@@ -22,8 +22,18 @@ public class MockDatabase {
         generatePosts();
     }
 
-    public User getUser(int index){
-        return users.get(index);
+    public User getUser(long index){
+        return users.get((int)index);
+    }
+
+    public Post getPost(long index){return posts.get((int)index);}
+
+    public List<User> getAllUsers(){
+        return users;
+    }
+
+    public List<Post> getAllPosts(){
+        return posts;
     }
 
     private void generateUsers(){

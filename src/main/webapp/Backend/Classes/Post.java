@@ -15,7 +15,7 @@ import java.util.UUID;
 @Entity
 public class Post {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private long id;
     private String message;
     private Date date;
     private boolean isReaction;
@@ -71,6 +71,25 @@ public class Post {
         reactions = new ArrayList<>();
         setMessage(message);
         setDate(new Date());
+    }
+
+    public Post(String message, User user){
+        reactions = new ArrayList<>();
+        setMessage(message);
+        setPoster(user);
+    }
+
+    public Post(String message, Date date){
+        reactions = new ArrayList<>();
+        setMessage(message);
+        setDate(date);
+    }
+
+    public Post(String message, User user, Date date){
+        reactions = new ArrayList<>();
+        setMessage(message);
+        setDate(date);
+        setPoster(user);
     }
 
 }
