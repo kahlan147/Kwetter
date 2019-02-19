@@ -1,4 +1,4 @@
-package Backend;
+package Backend.REST;
 
 /**
  * Created by Niels Verheijen on 12/02/2019.

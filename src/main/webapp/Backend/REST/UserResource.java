@@ -1,6 +1,7 @@
-package Backend;
+package Backend.REST;
 
 import Backend.Classes.User;
+import Backend.Service.UserService;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
