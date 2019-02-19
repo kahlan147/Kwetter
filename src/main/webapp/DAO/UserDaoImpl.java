@@ -1,6 +1,6 @@
-package main.webapp.DAO;
+package DAO;
 
-import main.webapp.Backend.Classes.User;
+import Backend.Classes.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,13 +19,13 @@ public class UserDaoImpl implements UserDao {
     @Override
     public boolean createUser(User user) {
         users.add(user);
+        user.setId(users.size());
         return true;
     }
 
     @Override
     public boolean deleteUser(User user) {
         users.remove(user);
-        user.setId(users.size());
         return true;
     }
 

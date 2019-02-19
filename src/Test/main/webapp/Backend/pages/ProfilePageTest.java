@@ -1,10 +1,11 @@
 package main.webapp.Backend.pages;
 
-import main.webapp.Backend.Classes.Post;
-import main.webapp.Backend.Classes.User;
-import main.webapp.DAO.Database;
-import main.webapp.DAO.MockData.MockDaoDatabase;
-import main.webapp.DAO.MockData.MockDatabase;
+import Backend.Classes.Post;
+import Backend.Classes.User;
+import Backend.pages.ProfilePage;
+import DAO.Database;
+import DAO.MockData.MockDaoDatabase;
+import DAO.MockData.MockDatabase;
 import org.junit.Before;
 import org.junit.Test;
 

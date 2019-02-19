@@ -1,8 +1,8 @@
-package main.webapp.DAO.MockData;
+package DAO.MockData;
 
-import main.webapp.Backend.Classes.Post;
-import main.webapp.Backend.Classes.User;
-import main.webapp.DAO.Database;
+import Backend.Classes.Post;
+import Backend.Classes.User;
+import DAO.Database;
 
 import java.util.ArrayList;
 import java.util.List;

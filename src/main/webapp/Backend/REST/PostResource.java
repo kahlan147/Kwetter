@@ -1,7 +1,7 @@
-package main.webapp.Backend;
+package Backend;
 
 /**
  * Created by Niels Verheijen on 12/02/2019.
  */
-public class PostService {
+public class PostResource {
 }

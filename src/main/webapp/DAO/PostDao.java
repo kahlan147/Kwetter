@@ -1,7 +1,7 @@
-package main.webapp.DAO;
+package DAO;
 
-import main.webapp.Backend.Classes.Post;
-import main.webapp.Backend.Classes.User;
+import Backend.Classes.Post;
+import Backend.Classes.User;
 
 import java.util.List;
 
@@ -13,6 +13,7 @@ public interface PostDao {
     boolean createPost(Post post);
     boolean deletePost(Post post);
     boolean sendPost(Post post, User user);
-    boolean sendReaction(User user, Post post, String text, boolean isReaction);
+    boolean sendReaction(User user, Post post, String text);
     List<Post> getLatestTenPosts(User user);
+    List<Post> getAllPosts();
 }

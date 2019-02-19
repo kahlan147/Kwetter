@@ -1,4 +1,4 @@
-package main.webapp.Backend.Classes;
+package Backend.Classes;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by Niels Verheijen on 11/02/2019.
@@ -66,6 +65,10 @@ public class Post {
     }
 
     //</editor-fold>
+
+    public Post(){
+
+    }
 
     public Post(String message){
         reactions = new ArrayList<>();

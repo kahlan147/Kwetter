@@ -1,7 +1,7 @@
-package main.webapp.DAO;
+package DAO;
 
-import main.webapp.Backend.Classes.Post;
-import main.webapp.Backend.Classes.User;
+import Backend.Classes.Post;
+import Backend.Classes.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,9 +36,9 @@ public class PostDaoImpl implements PostDao {
     }
 
     @Override
-    public boolean sendReaction(User user, Post post, String text, boolean isReaction) {
+    public boolean sendReaction(User user, Post post, String text) {
         Post newPost = new Post(text, user);
-        newPost.setIsReaction(isReaction);
+        newPost.setIsReaction(true);
         post.addToReactions(newPost);
         return true;
     }
@@ -46,5 +46,10 @@ public class PostDaoImpl implements PostDao {
     @Override
     public List<Post> getLatestTenPosts(User user) {
         return user.getLastPosts(10);
+    }
+
+    @Override
+    public List<Post> getAllPosts(){
+        return posts;
     }
 }

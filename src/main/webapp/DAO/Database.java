@@ -1,7 +1,7 @@
-package main.webapp.DAO;
+package DAO;
 
-import main.webapp.Backend.Classes.Post;
-import main.webapp.Backend.Classes.User;
+import Backend.Classes.Post;
+import Backend.Classes.User;
 
 import java.util.List;
 
