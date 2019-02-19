@@ -1,9 +1,6 @@
-package main.webapp.Backend.Classes;
+package Backend.Classes;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -11,11 +8,13 @@ import java.util.UUID;
 /**
  * Created by Niels Verheijen on 11/02/2019.
  */
+@NamedQuery(name="user.all", query = "SELECT u from User as u")
+
 @Entity
 public class User {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private long id;
     private String name;
     private String password;
     private String bio;
@@ -27,6 +26,14 @@ public class User {
     private List<Post> posts;
 
     // <editor-fold defaultstate="collapsed" desc="Gets Sets">
+
+    public void setId(long id){
+        this.id=id;
+    }
+
+    public long getId(){
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -80,6 +87,10 @@ public class User {
         followers.add(user);
     }
 
+    public void removeFromFollowers(User user){
+        followers.remove(user);
+    }
+
     public List<User> getAllFollowers(){
         return followers;
     }
@@ -87,6 +98,11 @@ public class User {
     public void addToFollowing(User user){
         following.add(user);
         user.addToFollowers(this);
+    }
+
+    public void removeFromFollowing(User user){
+        following.remove(user);
+        user.removeFromFollowers(this);
     }
 
     public List<User> getAllFollowing(){
@@ -106,13 +122,17 @@ public class User {
         if(amount > posts.size()){
             amount = posts.size();
         }
-        for(int x = 0; x < amount; x++){
-            lastPosts.add(posts.get(posts.size()-amount));
+        for(int x = posts.size(); x > posts.size()-amount; x--){
+            lastPosts.add(posts.get(x-1));
         }
         return lastPosts;
     }
 
     // </editor-fold>
+
+    public User(){
+
+    }
 
     public User(String name, String password){
         setName(name);

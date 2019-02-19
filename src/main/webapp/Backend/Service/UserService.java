@@ -1,10 +1,11 @@
-package main.webapp.Backend;
+package Backend;
 
-import main.webapp.Backend.Classes.User;
+import Backend.Classes.User;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  * Created by Niels Verheijen on 12/02/2019.
@@ -24,4 +25,6 @@ public class UserService {
         em.persist(user);
         return user;
     }
+
+    public List<User> getAlUser(){return em.createNamedQuery("user.all").getResultList();}
 }

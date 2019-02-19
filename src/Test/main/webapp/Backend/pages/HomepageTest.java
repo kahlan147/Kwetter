@@ -1,12 +1,16 @@
 package main.webapp.Backend.pages;
 
-import main.webapp.Backend.Classes.Post;
-import main.webapp.Backend.Classes.User;
-import main.webapp.MockData.MockDatabase;
+import Backend.Classes.Post;
+import Backend.Classes.User;
+import Backend.pages.Homepage;
+import DAO.Database;
+import DAO.MockData.MockDaoDatabase;
+import DAO.MockData.MockDatabase;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+
 
 import static org.junit.Assert.*;
 
@@ -15,7 +19,7 @@ import static org.junit.Assert.*;
  */
 public class HomepageTest {
 
-    private MockDatabase database;
+    private Database database;
 
     @Before
     public void setUp() throws Exception {
@@ -42,7 +46,7 @@ public class HomepageTest {
         User user = database.getUser(9);
         Homepage homepage = new Homepage(user);
         String message = "TestMessage";
-        Post respondTo = database.posts.get(4);
+        Post respondTo = database.getPost(4);
         homepage.PostTweet(message, respondTo);
         Post post = user.getLastPosts(1).get(0);
         assertEquals(post.getMessage(), message);

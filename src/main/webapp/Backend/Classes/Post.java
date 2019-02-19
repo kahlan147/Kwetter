@@ -1,4 +1,4 @@
-package main.webapp.Backend.Classes;
+package Backend.Classes;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by Niels Verheijen on 11/02/2019.
@@ -15,7 +14,7 @@ import java.util.UUID;
 @Entity
 public class Post {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private long id;
     private String message;
     private Date date;
     private boolean isReaction;
@@ -67,10 +66,33 @@ public class Post {
 
     //</editor-fold>
 
+    public Post(){
+
+    }
+
     public Post(String message){
         reactions = new ArrayList<>();
         setMessage(message);
         setDate(new Date());
+    }
+
+    public Post(String message, User user){
+        reactions = new ArrayList<>();
+        setMessage(message);
+        setPoster(user);
+    }
+
+    public Post(String message, Date date){
+        reactions = new ArrayList<>();
+        setMessage(message);
+        setDate(date);
+    }
+
+    public Post(String message, User user, Date date){
+        reactions = new ArrayList<>();
+        setMessage(message);
+        setDate(date);
+        setPoster(user);
     }
 
 }
