@@ -3,7 +3,6 @@ package Backend.Classes;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by Niels Verheijen on 11/02/2019.
@@ -13,7 +12,7 @@ import java.util.UUID;
 @Entity
 public class User {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
     private String password;
@@ -131,7 +130,9 @@ public class User {
     // </editor-fold>
 
     public User(){
-
+        followers = new ArrayList<>();
+        following = new ArrayList<>();
+        posts = new ArrayList<>();
     }
 
     public User(String name, String password){
@@ -140,6 +141,20 @@ public class User {
         followers = new ArrayList<>();
         following = new ArrayList<>();
         posts = new ArrayList<>();
+        setMod(true);
     }
+/*
+    public User(long id, String name, String password, String bio, String location, String website, boolean isMod){
+        setId(id);
+        setName(name);
+        setPassword(password);
+        setBio(bio);
+        setLocation(location);
+        setWebsite(website);
+        setMod(isMod);
+        followers = new ArrayList<>();
+        following = new ArrayList<>();
+        posts = new ArrayList<>();
+    }*/
 
 }

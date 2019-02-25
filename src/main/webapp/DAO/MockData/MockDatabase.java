@@ -2,7 +2,7 @@ package DAO.MockData;
 
 import Backend.Classes.Post;
 import Backend.Classes.User;
-import DAO.Database;
+import DAO.IDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.Random;
 /**
  * Created by Niels Verheijen on 13/02/2019.
  */
-public class MockDatabase implements Database {
+public class MockDatabase implements IDatabase {
     private List<User> users;
     private List<Post> posts;
 

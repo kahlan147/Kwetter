@@ -5,10 +5,7 @@ import Backend.Service.UserService;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 import java.util.List;
 
 /**
@@ -18,12 +15,13 @@ import java.util.List;
 @Stateless
 @Path("users")
 public class UserResource {
+
     @Inject
     public UserService userService;
 
     @GET
     @Path("{id}")
-    public User getUser(@PathParam("id") int id){
+    public User getUser(@PathParam("id") long id){
         return userService.getUser(id);
     }
 
@@ -32,6 +30,13 @@ public class UserResource {
         return userService.saveUser(user);
     }
 
-    @GET
-    public List<User> allUsers(){return userService.getAlUser();}
+    @PUT
+    public boolean updateUser(User user){
+        return userService.updateUser(user);
+    }
+/*
+    @PUT
+    public boolean addFollower(User follower, User followed){
+        return userService.follow(follower,followed);
+    }*/
 }

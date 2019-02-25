@@ -1,8 +1,8 @@
 package main.webapp.DAO;
 
 import Backend.Classes.User;
-import DAO.UserDao;
-import DAO.UserDaoImpl;
+import DAO.IUserDao;
+import DAO.MockUserDao;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,15 +11,15 @@ import static org.junit.Assert.*;
 /**
  * Created by Niels Verheijen on 18/02/2019.
  */
-public class UserDaoTest {
+public class IUserDaoTest {
 
-    private UserDao userDao;
+    private IUserDao userDao;
     private User user1;
     private User user2;
 
     @Before
     public void setUp() throws Exception {
-        userDao = new UserDaoImpl();
+        userDao = new MockUserDao();
         user1 = new User("Testboy", "password");
         user2 = new User("Testgirl", "password");
     }

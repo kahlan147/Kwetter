@@ -3,7 +3,7 @@ package DAO.MockData;
 import Backend.Classes.Post;
 import Backend.Classes.User;
 import DAO.*;
-import DAO.UserDao;
+import DAO.IUserDao;
 
 import java.util.List;
 import java.util.Random;
@@ -11,13 +11,13 @@ import java.util.Random;
 /**
  * Created by Niels Verheijen on 13/02/2019.
  */
-public class MockDaoDatabase implements Database {
+public class MockDaoDatabase implements IDatabase {
 
-    private UserDao userDao;
-    private PostDao postDao;
+    private IUserDao userDao;
+    private IPostDao postDao;
 
     public MockDaoDatabase(){
-        userDao = new UserDaoImpl();
+        userDao = new MockUserDao();
         postDao = new PostDaoImpl();
         generateUsers();
         generatePosts();

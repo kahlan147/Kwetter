@@ -1,11 +1,11 @@
 package Backend.Service;
 
 import Backend.Classes.User;
+import DAO.IUserDao;
+import DAO.UserDao;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.util.List;
 
 /**
  * Created by Niels Verheijen on 12/02/2019.
@@ -14,17 +14,24 @@ import java.util.List;
 @Stateless
 public class UserService {
 
-    @PersistenceContext
-    EntityManager em;
+    @EJB
+    private UserDao userDao;
 
-    public User getUser(int id){
-        return em.find(User.class, id);
+    public User getUser(long id){
+        return userDao.getUser(id);
     }
 
     public User saveUser(User user){
-        em.persist(user);
-        return user;
+        return userDao.createUser(user);
     }
 
-    public List<User> getAlUser(){return em.createNamedQuery("user.all").getResultList();}
+    //public List<User> getAlUser(){return em.createNamedQuery("user.all",User.class).getResultList();}
+
+    public boolean updateUser(User user){
+        return userDao.updateUser(user);
+    }
+
+    public boolean follow(User follower, User followed){
+        return userDao.follow(follower, followed);
+    }
 }

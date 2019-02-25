@@ -2,7 +2,7 @@ package main.webapp.DAO;
 
 import Backend.Classes.Post;
 import Backend.Classes.User;
-import DAO.PostDao;
+import DAO.IPostDao;
 import DAO.PostDaoImpl;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
 /**
  * Created by Niels Verheijen on 18/02/2019.
  */
-public class PostDaoTest {
+public class IPostDaoTest {
 
-    private PostDao postDao;
+    private IPostDao postDao;
     private User user1;
     private User user2;
 

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Niels Verheijen on 13/02/2019.
  */
-public class PostDaoImpl implements PostDao {
+public class PostDaoImpl implements IPostDao {
 
     private List<Post> posts;
 
