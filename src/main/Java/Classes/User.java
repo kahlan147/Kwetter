@@ -90,7 +90,7 @@ public class User {
     }
 
     public void removeFromFollowers(User user){
-        followers.remove(user);
+        followers.removeIf(U -> (U.getId() == user.getId()));
     }
 
     public List<User> getAllFollowers(){
@@ -103,7 +103,7 @@ public class User {
     }
 
     public void removeFromFollowing(User user){
-        following.remove(user);
+        following.removeIf(U -> (U.getId() == user.getId()));
         user.removeFromFollowers(this);
     }
 

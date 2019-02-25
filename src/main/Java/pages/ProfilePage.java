@@ -1,8 +1,7 @@
-package Backend.pages;
+package pages;
 
-import javafx.geometry.Pos;
-import Backend.Classes.Post;
-import Backend.Classes.User;
+import Classes.Post;
+import Classes.User;
 
 import java.util.List;
 

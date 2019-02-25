@@ -1,7 +1,7 @@
-package Backend.pages;
+package pages;
 
-import Backend.Classes.Post;
-import Backend.Classes.User;
+import Classes.Post;
+import Classes.User;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;

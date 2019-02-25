@@ -2,10 +2,12 @@ package REST;
 
 import Classes.User;
 import Service.UserService;
+import jdk.nashorn.internal.objects.annotations.Getter;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import java.util.List;
 
 /**
  * Created by Niels Verheijen on 12/02/2019.
@@ -17,6 +19,8 @@ public class UserResource {
 
     @Inject
     public UserService userService;
+
+    //<editor-fold desc="NO TOUCH! This shit works. Somehow.">
 
     @GET
     @Path("{id}")
@@ -40,9 +44,23 @@ public class UserResource {
     public boolean updateUser(@PathParam("id")long id, User user){
         return userService.updateUser(id, user);
     }
-/*
+
+    //</editor-fold>
+
     @PUT
-    public boolean addFollower(User follower, User followed) {
-        return userService.follow(follower, followed);
-    }*/
+    @Path("follow/{idFollower}/{idFollowed}")
+    public boolean addFollower(@PathParam("idFollower")long idFollower, @PathParam("idFollowed")long idFollowed) {
+        return userService.follow(idFollower, idFollowed);
+    }
+
+    @PUT
+    @Path("unfollow/{idFollower}/{idFollowed}")
+    public boolean removeFollower(@PathParam("idFollower")long idFollower, @PathParam("idFollowed")long idFollowed){
+        return userService.unFollow(idFollower, idFollowed);
+    }
+
+    @GET
+    public List<User> getAllUsers(){
+        return userService.getAllUsers();
+    }
 }

@@ -61,11 +61,13 @@ public class UserDao implements IUserDao {
 
     @Override
     public boolean unfollow(User follower, User followed) {
-        return false;
+        follower.removeFromFollowing(followed);
+        updateUser(follower);
+        return true;
     }
 
     @Override
     public List<User> getAllUsers() {
-        return null;
+        return em.createNamedQuery("user.all",User.class).getResultList();
     }
 }
