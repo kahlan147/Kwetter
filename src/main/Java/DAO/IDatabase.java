@@ -1,7 +1,7 @@
 package DAO;
 
-import Backend.Classes.Post;
-import Backend.Classes.User;
+import Classes.Post;
+import Classes.User;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package Backend.Classes;
+package Classes;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -20,8 +20,11 @@ public class User {
     private String location;
     private String website;
     private boolean isMod;
+    @ManyToMany(mappedBy = "following")
     private List<User> followers;
+    @ManyToMany
     private List<User> following;
+    @OneToMany
     private List<Post> posts;
 
     // <editor-fold defaultstate="collapsed" desc="Gets Sets">
@@ -143,7 +146,7 @@ public class User {
         posts = new ArrayList<>();
         setMod(true);
     }
-/*
+
     public User(long id, String name, String password, String bio, String location, String website, boolean isMod){
         setId(id);
         setName(name);
@@ -155,6 +158,6 @@ public class User {
         followers = new ArrayList<>();
         following = new ArrayList<>();
         posts = new ArrayList<>();
-    }*/
+    }
 
 }

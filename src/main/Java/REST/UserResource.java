@@ -1,12 +1,11 @@
-package Backend.REST;
+package REST;
 
-import Backend.Classes.User;
-import Backend.Service.UserService;
+import Classes.User;
+import Service.UserService;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import java.util.List;
 
 /**
  * Created by Niels Verheijen on 12/02/2019.
@@ -25,18 +24,25 @@ public class UserResource {
         return userService.getUser(id);
     }
 
+    @DELETE
+    @Path("{id}")
+    public boolean removeUser(@PathParam("id") long id){
+        return userService.removeUser(id);
+    }
+
     @POST
     public User saveUser(User user){
         return userService.saveUser(user);
     }
 
     @PUT
-    public boolean updateUser(User user){
-        return userService.updateUser(user);
+    @Path("{id}")
+    public boolean updateUser(@PathParam("id")long id, User user){
+        return userService.updateUser(id, user);
     }
 /*
     @PUT
-    public boolean addFollower(User follower, User followed){
-        return userService.follow(follower,followed);
+    public boolean addFollower(User follower, User followed) {
+        return userService.follow(follower, followed);
     }*/
 }

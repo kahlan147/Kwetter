@@ -1,6 +1,6 @@
 package DAO;
 
-import Backend.Classes.User;
+import Classes.User;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -23,8 +23,10 @@ public class UserDao implements IUserDao {
     }
 
     @Override
-    public boolean deleteUser(User user) {
-        return false;
+    public boolean deleteUser(long id) {
+        User user = em.find(User.class, id);
+        em.remove(user);
+        return true;
     }
 
     @Override

@@ -1,8 +1,8 @@
 package main.webapp.Backend.pages;
 
-import Backend.Classes.Post;
-import Backend.Classes.User;
-import Backend.pages.Homepage;
+import Classes.Post;
+import Classes.User;
+import pages.Homepage;
 import DAO.IDatabase;
 import DAO.MockData.MockDatabase;
 import org.junit.Before;

@@ -1,56 +1,54 @@
 package DAO.MockData;
 
-import Backend.Classes.Post;
-import Backend.Classes.User;
-import DAO.*;
-import DAO.IUserDao;
+import Classes.Post;
+import Classes.User;
+import DAO.IDatabase;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 /**
  * Created by Niels Verheijen on 13/02/2019.
  */
-public class MockDaoDatabase implements IDatabase {
+public class MockDatabase implements IDatabase {
+    private List<User> users;
+    private List<Post> posts;
 
-    private IUserDao userDao;
-    private IPostDao postDao;
-
-    public MockDaoDatabase(){
-        userDao = new MockUserDao();
-        postDao = new PostDaoImpl();
+    public MockDatabase(){
+        users = new ArrayList<>();
+        posts = new ArrayList<>();
         generateUsers();
         generatePosts();
     }
 
     public User getUser(long index){
-        return userDao.getUser(index);
+        return users.get((int)index);
     }
 
-    public Post getPost(long index){
-        return postDao.getAllPosts().get(Math.toIntExact(index));}
+    public Post getPost(long index){return posts.get((int)index);}
 
     public List<User> getAllUsers(){
-        return userDao.getAllUsers();
+        return users;
     }
 
     public List<Post> getAllPosts(){
-        return postDao.getAllPosts();
+        return posts;
     }
 
     private void generateUsers(){
-        userDao.createUser(new User("jeff", "klokje"));
-        userDao.createUser(new User("mark", "polka"));
-        userDao.createUser(new User("Tom", "98213"));
-        userDao.createUser(new User("Tim", "1231"));
-        userDao.createUser(new User("Ben", "1235647"));
-        userDao.createUser(new User("Bob", "afag"));
-        userDao.createUser(new User("Amanda", "gs3a4"));
-        userDao.createUser(new User("Lisbeth", "segas2"));
-        userDao.createUser(new User ("Niko", "Bellick"));
-        userDao.createUser(new User("Zayne", "Bard125"));
+        users.add(new User("jeff", "klokje"));
+        users.add(new User("mark", "polka"));
+        users.add(new User("Tom", "98213"));
+        users.add(new User("Tim", "1231"));
+        users.add(new User("Ben", "1235647"));
+        users.add(new User("Bob", "afag"));
+        users.add(new User("Amanda", "gs3a4"));
+        users.add(new User("Lisbeth", "segas2"));
+        users.add(new User ("Niko", "Bellick"));
+        users.add(new User("Zayne", "Bard125"));
 
-        for(User user : userDao.getAllUsers()){
+        for(User user : users){
             user.setBio(generateRandomStringOfSize(20));
             user.setLocation(generateRandomStringOfSize(4));
             user.setWebsite(generateRandomStringOfSize(6));
@@ -68,18 +66,18 @@ public class MockDaoDatabase implements IDatabase {
         followUser(9,3);
     }
 
-    private void followUser(long user1, long user2){
-        userDao.getUser(user1).addToFollowing(userDao.getUser(user2));
+    private void followUser(int user1, int user2){
+        users.get(user1).addToFollowing(users.get(user2));
     }
 
-    private void createPost(long user, boolean isReaction, int reactionTo){
+    private void createPost(int user, boolean isReaction, int reactionTo){
         Post post = new Post(generateRandomStringOfSize(20));
-        post.setPoster(userDao.getUser(user));
+        post.setPoster(users.get(user));
         post.setIsReaction(isReaction);
         if(isReaction) {
-            postDao.getAllPosts().get(reactionTo).addToReactions(post);
+            posts.get(reactionTo).addToReactions(post);
         }
-        postDao.createPost(post);
+        posts.add(post);
     }
 
     private void generatePosts(){

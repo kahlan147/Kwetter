@@ -1,7 +1,7 @@
 package main.webapp.DAO;
 
-import Backend.Classes.Post;
-import Backend.Classes.User;
+import Classes.Post;
+import Classes.User;
 import DAO.IPostDao;
 import DAO.PostDaoImpl;
 import org.junit.Before;

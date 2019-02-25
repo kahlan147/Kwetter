@@ -1,9 +1,6 @@
-package Backend.Classes;
+package Classes;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +15,9 @@ public class Post {
     private String message;
     private Date date;
     private boolean isReaction;
+    @ManyToOne
     private User poster;
+    @OneToMany
     private List<Post> reactions;
 
     //<editor-fold defaultstate="collapsed" desc="Gets Sets">

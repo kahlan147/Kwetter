@@ -1,6 +1,6 @@
 package DAO;
 
-import Backend.Classes.User;
+import Classes.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +24,8 @@ public class MockUserDao implements IUserDao {
     }
 
     @Override
-    public boolean deleteUser(User user) {
-        users.remove(user);
+    public boolean deleteUser(long id) {
+        users.remove(id);
         return true;
     }
 

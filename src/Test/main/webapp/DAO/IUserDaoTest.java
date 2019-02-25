@@ -1,6 +1,6 @@
 package main.webapp.DAO;
 
-import Backend.Classes.User;
+import Classes.User;
 import DAO.IUserDao;
 import DAO.MockUserDao;
 import org.junit.Before;
@@ -36,7 +36,7 @@ public class IUserDaoTest {
         userDao.createUser(user1);
         User returnedUser = userDao.getUser(user1.getId());
         assertEquals(user1, returnedUser);
-        userDao.deleteUser(user1);
+        userDao.deleteUser(user1.getId());
         returnedUser = userDao.getUser(user1.getId());
         assertNotEquals(returnedUser, user1);
     }

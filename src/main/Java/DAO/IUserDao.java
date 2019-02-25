@@ -1,6 +1,6 @@
 package DAO;
 
-import Backend.Classes.User;
+import Classes.User;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface IUserDao {
     User createUser(User user);
-    boolean deleteUser(User user);
+    boolean deleteUser(long id);
     boolean updateUser(User user);
     User getUser(Long id);
     List<User> getUserFollowers(Long id);

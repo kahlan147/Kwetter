@@ -1,6 +1,6 @@
-package Backend.Service;
+package Service;
 
-import Backend.Classes.User;
+import Classes.User;
 import DAO.IUserDao;
 import DAO.UserDao;
 
@@ -15,10 +15,14 @@ import javax.ejb.Stateless;
 public class UserService {
 
     @EJB
-    private UserDao userDao;
+    private IUserDao userDao;
 
     public User getUser(long id){
         return userDao.getUser(id);
+    }
+
+    public boolean removeUser(Long id){
+        return userDao.deleteUser(id);
     }
 
     public User saveUser(User user){
@@ -27,7 +31,8 @@ public class UserService {
 
     //public List<User> getAlUser(){return em.createNamedQuery("user.all",User.class).getResultList();}
 
-    public boolean updateUser(User user){
+    public boolean updateUser(long id, User user){
+        user.setId(id);
         return userDao.updateUser(user);
     }
 
