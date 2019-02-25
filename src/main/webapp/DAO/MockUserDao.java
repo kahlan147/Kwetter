@@ -8,19 +8,19 @@ import java.util.List;
 /**
  * Created by Niels Verheijen on 13/02/2019.
  */
-public class UserDaoImpl implements UserDao {
+public class MockUserDao implements IUserDao {
 
     private List<User> users;
 
-    public UserDaoImpl(){
+    public MockUserDao(){
         users = new ArrayList<>();
     }
 
     @Override
-    public boolean createUser(User user) {
+    public User createUser(User user) {
         users.add(user);
         user.setId(users.size());
-        return true;
+        return user;
     }
 
     @Override

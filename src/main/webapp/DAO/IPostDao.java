@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Niels Verheijen on 15/02/2019.
  */
-public interface PostDao {
+public interface IPostDao {
 
     boolean createPost(Post post);
     boolean deletePost(Post post);

@@ -1,7 +1,9 @@
 package Backend.REST;
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
 
-/**
- * Created by Niels Verheijen on 20/02/2019.
- */
-public class JAXRSconfig {
+
+@ApplicationPath("api")
+public class JAXRSconfig extends Application{
+
 }

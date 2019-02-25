@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Niels Verheijen on 13/02/2019.
  */
-public interface Database {
+public interface IDatabase {
 
     User getUser(long index);
     Post getPost(long index);

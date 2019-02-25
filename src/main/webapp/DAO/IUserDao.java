@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * Created by Niels Verheijen on 15/02/2019.
  */
-public interface UserDao {
-    boolean createUser(User user);
+public interface IUserDao {
+    User createUser(User user);
     boolean deleteUser(User user);
     boolean updateUser(User user);
     User getUser(Long id);
