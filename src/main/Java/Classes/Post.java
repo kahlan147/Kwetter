@@ -8,6 +8,9 @@ import java.util.List;
 /**
  * Created by Niels Verheijen on 11/02/2019.
  */
+
+@NamedQuery(name="post.all", query = "SELECT p from Post as p")
+
 @Entity
 public class Post {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +24,14 @@ public class Post {
     private List<Post> reactions;
 
     //<editor-fold defaultstate="collapsed" desc="Gets Sets">
+
+    public long getId(){
+        return id;
+    }
+
+    public void setId(long id){
+        this.id = id;
+    }
 
     public String getMessage() {
         return message;

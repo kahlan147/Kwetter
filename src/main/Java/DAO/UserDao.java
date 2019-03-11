@@ -23,8 +23,7 @@ public class UserDao implements IUserDao {
     }
 
     @Override
-    public boolean deleteUser(long id) {
-        User user = em.find(User.class, id);
+    public boolean deleteUser(User user) {
         em.remove(user);
         return true;
     }
@@ -56,6 +55,7 @@ public class UserDao implements IUserDao {
     public boolean follow(User follower, User followed) {
         follower.addToFollowing(followed);
         updateUser(follower);
+        updateUser(followed);
         return true;
     }
 
@@ -63,6 +63,7 @@ public class UserDao implements IUserDao {
     public boolean unfollow(User follower, User followed) {
         follower.removeFromFollowing(followed);
         updateUser(follower);
+        updateUser(followed);
         return true;
     }
 

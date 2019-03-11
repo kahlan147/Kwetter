@@ -10,10 +10,11 @@ import java.util.List;
  */
 public interface IPostDao {
 
-    boolean createPost(Post post);
+    Post createPost(Post post);
+    Post getPost(long id);
     boolean deletePost(Post post);
-    boolean sendPost(Post post, User user);
-    boolean sendReaction(User user, Post post, String text);
-    List<Post> getLatestTenPosts(User user);
+    Post sendReaction(Post newPost, Post postToReactTo);
     List<Post> getAllPosts();
+    List<Post> getLatestTenPosts(User user);
+    List<Post> getAllPostsFrom(User user);
 }

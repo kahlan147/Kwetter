@@ -7,13 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ef8d406-11c5-4a9c-8f61-63d5c41f8993" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/Java/DAO/PostDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/Classes/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/main/webapp/DAO/IPostDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/main/webapp/DAO/IPostDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/main/webapp/DAO/IUserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/main/webapp/DAO/IUserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/Classes/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/Classes/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/DAO/IPostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/DAO/IPostDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/DAO/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/DAO/IUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/DAO/MockData/MockDaoDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/DAO/MockData/MockDaoDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/DAO/MockUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/DAO/MockData/MockUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/DAO/PostDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/DAO/MockData/MockPostDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/DAO/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/DAO/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/REST/PostResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/REST/PostResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/REST/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/REST/UserResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/Service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/Service/PostService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/pages/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/pages/Homepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/pages/ProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/pages/ProfilePage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,14 +34,45 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/REST/UserResource.java">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/IUserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="61" column="8" lean-forward="true" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+            <state relative-caret-position="144">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1180#1181#0" expanded="true" />
-                <element signature="e#1225#1226#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/REST/UserResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#465#466#0" expanded="true" />
+                <element signature="e#511#512#0" expanded="true" />
+                <element signature="e#599#600#0" expanded="true" />
+                <element signature="e#648#649#0" expanded="true" />
+                <element signature="e#696#697#0" expanded="true" />
+                <element signature="e#745#746#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/Classes/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#658#716#0" expanded="true" />
+                <element signature="method#removeFromFollowing#0;class#User#0" />
+                <element signature="method#getLastPosts#0;class#User#0" />
               </folding>
             </state>
           </provider>
@@ -42,51 +81,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Java/Service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="46" column="44" lean-forward="true" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+            <state relative-caret-position="240">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/UserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="57" column="29" lean-forward="true" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/IUserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/Classes/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="89" column="5" lean-forward="true" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1632#1633#0" expanded="true" />
-                <element signature="e#1667#1668#0" expanded="true" />
-                <element signature="e#1787#1788#0" expanded="true" />
-                <element signature="e#1855#1856#0" expanded="true" />
-                <element signature="method#getLastPosts#0;class#User#0" />
               </folding>
             </state>
           </provider>
@@ -110,13 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/Backend/Post.java" />
-        <option value="$PROJECT_DIR$/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/Backend/User.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/DAL/Database.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/MockData/MockDatabase.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/DAO/Dao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/Backend/notes" />
         <option value="$PROJECT_DIR$/src/main/webapp/DAO/MockData/PostDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/DAO/MockData/MockDaoDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/Backend/pages/Homepage.java" />
@@ -153,14 +144,21 @@
         <option value="$PROJECT_DIR$/src/main/webapp/DAO/IUserDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/Backend/Service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/Java/pages/Homepage.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/Classes/Post.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/DAO/IUserDao.java" />
         <option value="$PROJECT_DIR$/src/main/Java/DAO/MockUserDao.java" />
-        <option value="$PROJECT_DIR$/src/Test/main/webapp/DAO/IUserDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/Service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/REST/UserResource.java" />
         <option value="$PROJECT_DIR$/src/main/Java/Classes/User.java" />
         <option value="$PROJECT_DIR$/src/main/Java/DAO/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/Service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/DAO/IUserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/Service/PostService.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/REST/PostResource.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/DAO/MockData/MockUserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/DAO/IPostDao.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/DAO/PostDao.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/Classes/Post.java" />
+        <option value="$PROJECT_DIR$/src/Test/main/webapp/DAO/IUserDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/DAO/MockData/MockPostDao.java" />
+        <option value="$PROJECT_DIR$/src/Test/main/webapp/DAO/IPostDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/REST/UserResource.java" />
       </list>
     </option>
   </component>
@@ -204,7 +202,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,6 +242,23 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="DAO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kwetter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+              <item name="MockData" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kwetter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="REST" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kwetter" type="b2602c69:ProjectViewProjectNode" />
@@ -303,6 +317,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,7 +328,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551086386248" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552296273525" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../voorbeelden/microCoffee" />
@@ -445,22 +460,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomepageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Kwetter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.webapp.Backend.pages.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.webapp.Backend.pages" />
-      <option name="MAIN_CLASS_NAME" value="main.webapp.Backend.pages.HomepageTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="IPostDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Kwetter" />
       <extension name="coverage">
@@ -472,6 +471,23 @@
       <option name="PACKAGE_NAME" value="main.webapp.DAO" />
       <option name="MAIN_CLASS_NAME" value="main.webapp.DAO.IPostDaoTest" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IPostDaoTest.createPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Kwetter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.webapp.DAO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.webapp.DAO" />
+      <option name="MAIN_CLASS_NAME" value="main.webapp.DAO.IPostDaoTest" />
+      <option name="METHOD_NAME" value="createPost" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -538,18 +554,18 @@
     <list>
       <item itemvalue="GlassFish Server.Kwetter - GlassFish 5.184.0" />
       <item itemvalue="JUnit.All in Kwetter" />
-      <item itemvalue="JUnit.HomepageTest" />
       <item itemvalue="JUnit.IPostDaoTest" />
       <item itemvalue="JUnit.IPostDaoTest.getLatestTenPosts" />
       <item itemvalue="JUnit.ProfilePageTest.getLastTweetsFromUser" />
+      <item itemvalue="JUnit.IPostDaoTest.createPost" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.IPostDaoTest" />
+        <item itemvalue="JUnit.IPostDaoTest.createPost" />
         <item itemvalue="JUnit.ProfilePageTest.getLastTweetsFromUser" />
         <item itemvalue="JUnit.IPostDaoTest.getLatestTenPosts" />
         <item itemvalue="JUnit.All in Kwetter" />
-        <item itemvalue="JUnit.HomepageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -575,28 +591,14 @@
       <workItem from="1551033960594" duration="597000" />
       <workItem from="1551079520173" duration="5817000" />
       <workItem from="1551086678071" duration="11826000" />
+      <workItem from="1551165982890" duration="1059000" />
+      <workItem from="1551178172499" duration="1035000" />
+      <workItem from="1551254058998" duration="5570000" />
+      <workItem from="1552290605845" duration="4399000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PostDaoTest_getLatestTenPosts - 2019.02.18 at 10h 21m 51s.xml">
-      <configuration name="PostDaoTest.getLatestTenPosts" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PostDaoTest_getLatestTenPosts - 2019.02.18 at 10h 22m 29s.xml">
-      <configuration name="PostDaoTest.getLatestTenPosts" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PostDaoTest_getLatestTenPosts - 2019.02.18 at 10h 23m 10s.xml">
-      <configuration name="PostDaoTest.getLatestTenPosts" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PostDaoTest_getLatestTenPosts - 2019.02.18 at 10h 25m 08s.xml">
-      <configuration name="PostDaoTest.getLatestTenPosts" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProfilePageTest_getLastTweetsFromUser - 2019.02.18 at 10h 26m 46s.xml">
-      <configuration name="ProfilePageTest.getLastTweetsFromUser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProfilePageTest_getLastTweetsFromUser - 2019.02.18 at 10h 27m 49s.xml">
-      <configuration name="ProfilePageTest.getLastTweetsFromUser" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ProfilePageTest_getLastTweetsFromUser - 2019.02.18 at 10h 28m 11s.xml">
       <configuration name="ProfilePageTest.getLastTweetsFromUser" configurationId="JUnit" />
     </history-entry>
@@ -609,14 +611,33 @@
     <history-entry file="PostDaoTest - 2019.02.19 at 10h 49m 07s.xml">
       <configuration name="PostDaoTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="IPostDaoTest - 2019.03.11 at 09h 39m 42s.xml">
+      <configuration name="IPostDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IPostDaoTest - 2019.03.11 at 09h 41m 33s.xml">
+      <configuration name="IPostDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IPostDaoTest - 2019.03.11 at 09h 42m 58s.xml">
+      <configuration name="IPostDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IPostDaoTest - 2019.03.11 at 09h 43m 34s.xml">
+      <configuration name="IPostDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IPostDaoTest - 2019.03.11 at 09h 43m 45s.xml">
+      <configuration name="IPostDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IPostDaoTest - 2019.03.11 at 09h 44m 39s.xml">
+      <configuration name="IPostDaoTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95437000" />
+    <option name="totallyTimeSpent" value="107500000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15503356" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16308725" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -627,7 +648,7 @@
       <window_info id="Persistence" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" weight="0.28895184" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.28895184" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -643,7 +664,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.10134228" />
+      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.020134227" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -665,22 +686,6 @@
     <entry file="file://$PROJECT_DIR$/resources/META-INF/persistence.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/DAO/MockData/PostDao.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/DAO/Dao.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/MockData/MockDaoDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding>
-            <element signature="method#MockDaoDatabase#0;class#MockDaoDatabase#0" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#2033#2034#0" expanded="true" />
-            <element signature="e#2110#2111#0" expanded="true" />
-            <element signature="method#generatePosts#0;class#MockDaoDatabase#0" />
-            <element signature="method#generateRandomStringOfSize#0;class#MockDaoDatabase#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/MockData/MockDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -699,17 +704,6 @@
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/PostDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#deletePost#0;class#PostDaoImpl#0" />
           </folding>
         </state>
       </provider>
@@ -736,51 +730,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/main/webapp/DAO/IPostDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/IPostDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/REST/PostResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/Service/PostService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/Backend/notes" />
-    <entry file="file://$PROJECT_DIR$/src/main/Java/REST/JAXRSconfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/Frontend/HTML/Registration.html" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
@@ -840,10 +790,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/MockUserDao.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        <state relative-caret-position="272">
+          <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/REST/JAXRSconfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/Service/PostService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/REST/PostResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -852,69 +829,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test/main/webapp/DAO/IUserDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/IUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/Classes/Post.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/Test/main/webapp/DAO/IPostDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/REST/UserResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="61" column="8" lean-forward="true" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1225#1226#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/Classes/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="89" column="5" lean-forward="true" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1632#1633#0" expanded="true" />
-            <element signature="e#1667#1668#0" expanded="true" />
-            <element signature="e#1787#1788#0" expanded="true" />
-            <element signature="e#1855#1856#0" expanded="true" />
-            <element signature="method#getLastPosts#0;class#User#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/Service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="46" column="44" lean-forward="true" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+        <state relative-caret-position="134">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -923,10 +846,138 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="57" column="29" lean-forward="true" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+        <state relative-caret-position="-60">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/Classes/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#637#638#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/PostDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#949#950#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/IPostDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/MockData/MockUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-271">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/MockData/MockPostDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+            <element signature="e#590#591#0" expanded="true" />
+            <element signature="e#1057#1058#0" expanded="true" />
+            <element signature="e#1098#1099#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/MockData/MockDaoDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#MockDaoDatabase#0;class#MockDaoDatabase#0" />
+            <element signature="method#generateUsers#0;class#MockDaoDatabase#0" />
+            <element signature="method#createPost#0;class#MockDaoDatabase#0" />
+            <element signature="method#generatePosts#0;class#MockDaoDatabase#0" />
+            <element signature="method#generateRandomStringOfSize#0;class#MockDaoDatabase#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/DAO/IUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/Service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/REST/UserResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#745#746#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/Classes/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#658#716#0" expanded="true" />
+            <element signature="method#removeFromFollowing#0;class#User#0" />
+            <element signature="method#getLastPosts#0;class#User#0" />
           </folding>
         </state>
       </provider>

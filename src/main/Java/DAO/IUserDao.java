@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface IUserDao {
     User createUser(User user);
-    boolean deleteUser(long id);
+    boolean deleteUser(User user);
     boolean updateUser(User user);
     User getUser(Long id);
     List<User> getUserFollowers(Long id);

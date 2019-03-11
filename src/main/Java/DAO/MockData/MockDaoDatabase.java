@@ -18,7 +18,7 @@ public class MockDaoDatabase implements IDatabase {
 
     public MockDaoDatabase(){
         userDao = new MockUserDao();
-        postDao = new PostDaoImpl();
+        postDao = new MockPostDao();
         generateUsers();
         generatePosts();
     }

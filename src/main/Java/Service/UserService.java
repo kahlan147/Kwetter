@@ -23,7 +23,8 @@ public class UserService {
     }
 
     public boolean removeUser(Long id){
-        return userDao.deleteUser(id);
+        User user = getUser(id);
+        return userDao.deleteUser(user);
     }
 
     public User saveUser(User user){

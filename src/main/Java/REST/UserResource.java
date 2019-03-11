@@ -2,7 +2,6 @@ package REST;
 
 import Classes.User;
 import Service.UserService;
-import jdk.nashorn.internal.objects.annotations.Getter;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -45,8 +44,6 @@ public class UserResource {
         return userService.updateUser(id, user);
     }
 
-    //</editor-fold>
-
     @PUT
     @Path("follow/{idFollower}/{idFollowed}")
     public boolean addFollower(@PathParam("idFollower")long idFollower, @PathParam("idFollowed")long idFollowed) {
@@ -63,4 +60,6 @@ public class UserResource {
     public List<User> getAllUsers(){
         return userService.getAllUsers();
     }
+    //</editor-fold>
+
 }

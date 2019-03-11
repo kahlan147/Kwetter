@@ -2,7 +2,7 @@ package main.webapp.DAO;
 
 import Classes.User;
 import DAO.IUserDao;
-import DAO.MockUserDao;
+import DAO.MockData.MockUserDao;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,7 +36,7 @@ public class IUserDaoTest {
         userDao.createUser(user1);
         User returnedUser = userDao.getUser(user1.getId());
         assertEquals(user1, returnedUser);
-        userDao.deleteUser(user1.getId());
+        userDao.deleteUser(user1);
         returnedUser = userDao.getUser(user1.getId());
         assertNotEquals(returnedUser, user1);
     }
