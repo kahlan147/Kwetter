@@ -3,6 +3,7 @@ package Service;
 import Classes.Post;
 import Classes.User;
 import DAO.IPostDao;
+import DAO.IUserDao;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -16,6 +17,8 @@ public class PostService {
 
     @EJB
     private IPostDao postDao;
+    @EJB
+    private IUserDao userDao;
 
     public Post createPost(Post post){
         return postDao.createPost(post);
@@ -30,20 +33,26 @@ public class PostService {
         return postDao.deletePost(post);
     }
 
-    public Post sendPost(Post post, User user){
+    public Post addUserToPost(long postId, long userId){
+        User user = userDao.getUser(userId);
+        Post post = postDao.getPost(postId);
         post.setPoster(user);
-        return createPost(post);
+        return postDao.updatePost(post);
     }
 
-    public Post sendReaction(Post newPost, Post postReactionTo){
-        return postDao.sendReaction(newPost, postReactionTo);
+    public Post sendReaction(long postId, long reactionId){
+        Post postReactionTo = postDao.getPost(postId);
+        Post reaction = postDao.getPost(reactionId);
+        return postDao.sendReaction(postReactionTo, reaction);
     }
 
-    public List<Post> getLatestTenPosts(User user){
+    public List<Post> getLatestTenPosts(long id){
+        User user = userDao.getUser(id);
         return postDao.getLatestTenPosts(user);
     }
 
-    public List<Post> getAllPostsFrom(User user){
+    public List<Post> getAllPostsFrom(long id){
+        User user = userDao.getUser(id);
         return postDao.getAllPostsFrom(user);
     }
 

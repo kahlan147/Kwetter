@@ -49,4 +49,12 @@ public class UserService {
         User followed = getUser(idFollowed);
         return userDao.unfollow(follower,followed);
     }
+
+    public List<User> getAllFollowing(long id){
+        return userDao.getUserFollowing(id);
+    }
+
+    public List<User> getAllFollowers(long id){
+        return userDao.getUserFollowers(id);
+    }
 }

@@ -1,5 +1,6 @@
 package Classes;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,6 +20,7 @@ public class Post {
     private Date date;
     private boolean isReaction;
     @ManyToOne
+    @JsonbTransient
     private User poster;
     @OneToMany
     private List<Post> reactions;

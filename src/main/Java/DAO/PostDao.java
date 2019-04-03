@@ -35,10 +35,14 @@ public class PostDao implements IPostDao {
     }
 
     @Override
-    public Post sendReaction(Post newPost, Post postToReactTo) {
-        Post post = createPost(newPost);
-        postToReactTo.addToReactions(post);
+    public Post sendReaction(Post postToReactTo, Post reaction) {
+        postToReactTo.addToReactions(reaction);
         em.merge(postToReactTo);
+        return postToReactTo;
+    }
+    @Override
+    public Post updatePost(Post post){
+        em.merge(post);
         return post;
     }
 

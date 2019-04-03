@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Admin login</title>
+    <h:outputStylesheet library="css" name="loginpage.css"/>
+
+</h:head>
+<h:body>
+    <div class="ui-fluid">
+        <h:form id="loginForm" styleClass="loginForm">
+            <p:growl id="msgs" showDetail="true"/>
+
+            <p:panel id="basic" header="Login" style="margin-bottom:20px">
+                <h:panelGrid columns="2" cellpadding="10">
+
+                    <h:outputText value="Username: "/>
+                    <p:inputText id="username"/>
+                    <h:outputText value="Password: "/>
+                    <p:password id="password" value="#{passwordView.password1}"/>
+
+                    <p:button value="Login" styleClass="loginButton">
+                        <!--//outcome="Login"-->
+                    </p:button>
+
+
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </div>
+</h:body>
+</html>

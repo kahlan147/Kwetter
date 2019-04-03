@@ -38,6 +38,11 @@ public class MockPostDao implements IPostDao {
     }
 
     @Override
+    public Post updatePost(Post post) {
+        return null;
+    }
+
+    @Override
     public Post sendReaction(Post post, Post reaction) {
         reaction.setIsReaction(true);
         post.addToReactions(reaction);

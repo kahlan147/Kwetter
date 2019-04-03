@@ -13,7 +13,8 @@ public interface IPostDao {
     Post createPost(Post post);
     Post getPost(long id);
     boolean deletePost(Post post);
-    Post sendReaction(Post newPost, Post postToReactTo);
+    Post updatePost(Post post);
+    Post sendReaction(Post postToReactTo, Post reaction);
     List<Post> getAllPosts();
     List<Post> getLatestTenPosts(User user);
     List<Post> getAllPostsFrom(User user);

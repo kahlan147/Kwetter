@@ -45,13 +45,13 @@ public class UserResource {
     }
 
     @PUT
-    @Path("follow/{idFollower}/{idFollowed}")
+    @Path("{idFollower}/follow/{idFollowed}")
     public boolean addFollower(@PathParam("idFollower")long idFollower, @PathParam("idFollowed")long idFollowed) {
         return userService.follow(idFollower, idFollowed);
     }
 
     @PUT
-    @Path("unfollow/{idFollower}/{idFollowed}")
+    @Path("{idFollower}/unfollow/{idFollowed}")
     public boolean removeFollower(@PathParam("idFollower")long idFollower, @PathParam("idFollowed")long idFollowed){
         return userService.unFollow(idFollower, idFollowed);
     }
@@ -60,6 +60,14 @@ public class UserResource {
     public List<User> getAllUsers(){
         return userService.getAllUsers();
     }
+
+    @GET
+    @Path("{id}/followings")
+    public List<User> getAllFollowing(@PathParam("id")long id){return userService.getAllFollowing(id);}
     //</editor-fold>
+
+    @GET
+    @Path("{id}/followers")
+    public List<User> getAllFollowers(@PathParam("id")long id){return userService.getAllFollowers(id);}
 
 }

@@ -3,5 +3,10 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <display-name>Archetype Created Web Application</display-name>
+    <welcome-file-list>
+        <welcome-file>main/html/Login.xhtml</welcome-file>
+        <welcome-file>main/html/Profilepage.xhtml</welcome-file>
+        <welcome-file>main/html/Homepage.xhtml</welcome-file>
+    </welcome-file-list>
 </web-app>
 

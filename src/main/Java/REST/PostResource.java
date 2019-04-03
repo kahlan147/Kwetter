@@ -36,25 +36,27 @@ public class PostResource {
         return postService.deletePost(id);
     }
 
-    @POST
-    public Post sendPost(Post post, User user){
-        return postService.sendPost(post,user);
+    @PUT
+    @Path("{postId}/add/{userId}")
+    public Post addUserToPost(@PathParam("postId") long postId, @PathParam("userId") long userId){
+        return postService.addUserToPost(postId,userId);
     }
 
     @PUT
-    public Post sendReaction(Post newPost, Post postReactionTo){
-        return postService.sendReaction(newPost, postReactionTo);
+    @Path("{postId}/reaction/{reactionId}")
+    public Post sendReaction(@PathParam("postId") long postId, @PathParam("reactionId") long reactionId){
+        return postService.sendReaction(postId, reactionId);
     }
 
     @GET
-    @Path("/last10posts/")
-    public List<Post> getLatestTenPosts(User user){
-        return postService.getLatestTenPosts(user);
+    @Path("{id}/last10posts")
+    public List<Post> getLatestTenPosts(@PathParam("id") long id){
+        return postService.getLatestTenPosts(id);
     }
 
     @GET
-    @Path("/allposts/")
-    public List<Post> getAllPostsFrom(User user){
-        return postService.getAllPostsFrom(user);
+    @Path("{id}/allposts")
+    public List<Post> getAllPostsFrom(@PathParam("id") long id){
+        return postService.getAllPostsFrom(id);
     }
 }

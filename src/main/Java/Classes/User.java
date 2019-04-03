@@ -1,5 +1,6 @@
 package Classes;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 @Entity
 public class User {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private String password;
@@ -20,10 +21,14 @@ public class User {
     private String location;
     private String website;
     private boolean isMod;
+
     @ManyToMany(mappedBy = "following")
+    @JsonbTransient
     private List<User> followers;
+
     @ManyToMany
     private List<User> following;
+
     @OneToMany
     private List<Post> posts;
 
@@ -107,6 +112,7 @@ public class User {
         user.removeFromFollowers(this);
     }
 
+    @JsonbTransient
     public List<User> getAllFollowing(){
         return following;
     }
