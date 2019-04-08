@@ -1,0 +1,21 @@
+<head></head>
+<body>
+<div class="border">
+  <div class="border">
+    <p>first</p>
+  </div>
+  <div class="border">
+    <div class="border">
+      <div class="border">
+        <p>second</p>
+        <ul>
+          <li *ngFor="let user of users | async">{{user.name}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border">
+      <p>third</p>
+    </div>
+  </div>
+</div>
+</body>

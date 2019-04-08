@@ -2,7 +2,6 @@ package Service;
 
 import Classes.User;
 import DAO.IUserDao;
-import DAO.UserDao;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
