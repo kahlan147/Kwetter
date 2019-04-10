@@ -1,20 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<header>
-  <h1>{{title}}</h1>
-  <p>Search:</p>
-  <textarea></textarea>
+<div>
+  <header>
+    <h1>{{title}}</h1>
+    <p>Search:</p>
 
-  <nav *ngIf="searching">
-    <ul>
-      <li>link</li>
-      <li>link</li>
-      <li>link</li>
-    </ul>
-  </nav>
+    <input #box (keyup)="getAllUsersByName(box.value)">
 
-  <button></button>
+    <nav *ngIf="searching">
+      <ul *ngFor="let user of foundUsers">
+        <li>{{user.name}}</li>
+      </ul>
+    </nav>
 
-</header>
-<section>
-  <app-home></app-home>
-</section>
+    <div *ngIf="loggedInUser != null">
+      <p>Welcome {{loggedInUser.name}}</p>
+      <button (click)="logout()">Logout</button>
+    </div>
+
+  </header>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</div>

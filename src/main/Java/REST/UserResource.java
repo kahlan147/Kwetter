@@ -22,6 +22,12 @@ public class UserResource {
     //<editor-fold desc="NO TOUCH! This shit works. Somehow.">
 
     @GET
+    @Path("login/{name}/{password}")
+    public User logIn(@PathParam("name") String name, @PathParam("password") String password){
+        return userService.logIn(name, password);
+    }
+
+    @GET
     @Path("{id}")
     public User getUser(@PathParam("id") long id){
         return userService.getUser(id);

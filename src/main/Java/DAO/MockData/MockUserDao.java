@@ -18,6 +18,11 @@ public class MockUserDao implements IUserDao {
     }
 
     @Override
+    public User logIn(String name, String password) {
+        return null;
+    }
+
+    @Override
     public User createUser(User user) {
         users.add(user);
         user.setId(users.size());

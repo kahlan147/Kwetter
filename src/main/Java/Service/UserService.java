@@ -17,6 +17,8 @@ public class UserService {
     @EJB
     private IUserDao userDao;
 
+    public User logIn(String name, String password){return userDao.logIn(name,password);}
+
     public User getUser(long id){
         return userDao.getUser(id);
     }

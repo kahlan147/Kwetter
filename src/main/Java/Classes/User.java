@@ -9,8 +9,9 @@ import java.util.List;
  * Created by Niels Verheijen on 11/02/2019.
  */
 @NamedQueries({
-    @NamedQuery(name = "user.all", query = "SELECT u from User as u"),
-    @NamedQuery(name = "user.some", query = "SELECT u from User as u WHERE u.name like :uName"),
+        @NamedQuery(name = "user.all", query = "SELECT u from User as u"),
+        @NamedQuery(name = "user.some", query = "SELECT u from User as u WHERE u.name like :uName"),
+        @NamedQuery(name="user.login", query = "SELECT u from User as u WHERE u.name like :uName AND u.password like :uPassword"),
 })
 
 @Entity

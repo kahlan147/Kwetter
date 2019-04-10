@@ -17,6 +17,11 @@ export class UserService {
     headers: new HttpHeaders({
       'Content-Type':'application/json'
     })
+  };
+
+  login(username: String, password: String){
+    return this.http.get(this.apiURL + "/login/" + username + "/" + password)
+      .pipe(retry(1),catchError(this.handleError))
   }
 
   createUser(user): Observable<any> {
@@ -38,6 +43,14 @@ export class UserService {
   // HttpClient API get() method => Fetch employee
   getUser(id) {
     return this.http.get<User>(this.apiURL + '/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  getUsersByName(name){
+    return this.http.get<User>(this.apiURL + '/byName/' + name)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -83,11 +96,6 @@ export class UserService {
         catchError(this.handleError)
       )
   }
-
-  /*
-  get followers
-  get following
-   */
 
   handleError(error) {
     let errorMessage = '';

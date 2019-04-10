@@ -1,0 +1,28 @@
+<div>
+<p>-------------------------------------------------------------------------------------</p>
+  <div>
+      <form (ngSubmit)="OnClick_LogIn()" [ngFormOptions]="{updateOn:'submit'}">
+        <div class="form-horizontal">
+          <label for="loginUN">Username: </label>
+          <input id="loginUN" type="text" style="align-items: flex-end" class="form-control"
+                 placeholder="Enter Username" required [(ngModel)]="username" name="username">
+        </div>
+
+        <p></p>
+
+        <div class="form-horizontal">
+          <label for="LoginPW">Password: </label>
+          <input id="LoginPW" type="password" class="form-control"
+                 placeholder="Enter Password" required [(ngModel)]="password" name="password">
+        </div>
+
+        <p></p>
+
+        <div class="form-horizontal">
+          <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Login</button>
+        </div>
+      </form>
+    <button (click)="OnClick_Register()" class="btn btn-outline-primary btn-lg btn-block">Register</button>
+  </div>
+
+</div>

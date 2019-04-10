@@ -8,6 +8,7 @@ import java.util.List;
  * Created by Niels Verheijen on 15/02/2019.
  */
 public interface IUserDao {
+    User logIn(String name, String password);
     User createUser(User user);
     List<User> getUsersByName(String name);
     boolean deleteUser(User user);

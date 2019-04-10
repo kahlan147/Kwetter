@@ -17,6 +17,14 @@ public class UserDao implements IUserDao {
     private EntityManager em;
 
     @Override
+    public User logIn(String name, String password){
+        return em.createNamedQuery("user.login", User.class)
+                .setParameter("uName", name)
+                .setParameter("uPassword", password)
+                .getSingleResult();
+    }
+
+    @Override
     public User createUser(User user) {
         em.persist(user);
         return user;
