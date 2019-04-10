@@ -9,6 +9,7 @@ import java.util.List;
  */
 public interface IUserDao {
     User createUser(User user);
+    List<User> getUsersByName(String name);
     boolean deleteUser(User user);
     boolean updateUser(User user);
     User getUser(Long id);

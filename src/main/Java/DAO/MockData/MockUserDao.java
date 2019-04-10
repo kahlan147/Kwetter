@@ -25,6 +25,11 @@ public class MockUserDao implements IUserDao {
     }
 
     @Override
+    public List<User> getUsersByName(String name) {
+        return null;
+    }
+
+    @Override
     public boolean deleteUser(User user) {
         users.remove(user);
         return true;

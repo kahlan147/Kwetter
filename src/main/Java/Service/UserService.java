@@ -21,6 +21,8 @@ public class UserService {
         return userDao.getUser(id);
     }
 
+    public List<User> getUsersByName(String name){return userDao.getUsersByName(name);}
+
     public boolean removeUser(Long id){
         User user = getUser(id);
         return userDao.deleteUser(user);

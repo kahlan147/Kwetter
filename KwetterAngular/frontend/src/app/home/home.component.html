@@ -1,15 +1,19 @@
 <head></head>
 <body>
-<div class="border">
+<div class="border" *ngIf="allDataFetched">
   <div class="border">
     <p>first</p>
   </div>
   <div class="border">
     <div class="border">
       <div class="border">
-        <p>second</p>
-        <ul>
-          <li *ngFor="let user of users | async">{{user.name}}</li>
+        <p>Name: {{user.name}}</p>
+        <p>Id: {{user.id}}</p>
+        <ul *ngFor="let user of users">
+          <li>{{user.id}}</li>
+          <li>{{user.name}}</li>
+          <li>{{user.password}}</li>
+          <li>{{user.isMod}}</li>
         </ul>
       </div>
     </div>

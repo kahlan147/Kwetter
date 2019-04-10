@@ -27,6 +27,12 @@ public class UserResource {
         return userService.getUser(id);
     }
 
+    @GET
+    @Path("byName/{name}")
+    public List<User> getUsersByName(@PathParam("name") String name){
+        return userService.getUsersByName(name);
+    }
+
     @DELETE
     @Path("{id}")
     public boolean removeUser(@PathParam("id") long id){

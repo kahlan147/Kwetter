@@ -7,7 +7,7 @@ import { User } from '../shared/user';
 @Injectable({
   providedIn: 'root'
 })
-export class RestApiService {
+export class UserService {
 
   apiURL = '//localhost:8080/Kwetter/api/users';
 
@@ -36,13 +36,58 @@ export class RestApiService {
   }
 
   // HttpClient API get() method => Fetch employee
-  getUser(id): Observable<User> {
+  getUser(id) {
     return this.http.get<User>(this.apiURL + '/' + id)
       .pipe(
         retry(1),
         catchError(this.handleError)
       )
   }
+
+  updateUser(user) : Observable<User>{
+    return this.http.put<User>(this.apiURL + '/' + user.id, JSON.stringify(user), this.httpOption)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  addFollower(user, id) : Observable<User>{
+    return this.http.put<User>(this.apiURL + '/' + user.id + "/follow/" + id, JSON.stringify(user), this.httpOption)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  removeFollower(user, id) : Observable<User>{
+    return this.http.put<User>(this.apiURL + '/' + user.id + '/unfollow/' + id, JSON.stringify(user), this.httpOption)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  getFollowers(id){
+    return this.http.get<User>(this.apiURL + '/' + id + '/followers')
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  getFollowings(id) : Observable<User>{
+    return this.http.get<User>(this.apiURL + '/' + id + '/followings')
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  /*
+  get followers
+  get following
+   */
 
   handleError(error) {
     let errorMessage = '';

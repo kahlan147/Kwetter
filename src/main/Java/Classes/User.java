@@ -8,7 +8,10 @@ import java.util.List;
 /**
  * Created by Niels Verheijen on 11/02/2019.
  */
-@NamedQuery(name="user.all", query = "SELECT u from User as u")
+@NamedQueries({
+    @NamedQuery(name = "user.all", query = "SELECT u from User as u"),
+    @NamedQuery(name = "user.some", query = "SELECT u from User as u WHERE u.name like :uName"),
+})
 
 @Entity
 public class User {

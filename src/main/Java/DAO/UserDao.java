@@ -23,6 +23,13 @@ public class UserDao implements IUserDao {
     }
 
     @Override
+    public List<User> getUsersByName(String name){
+        return em.createNamedQuery("user.some", User.class)
+                .setParameter("uName", "%" + name + "%")
+                .getResultList();
+    }
+
+    @Override
     public boolean deleteUser(User user) {
         em.remove(user);
         return true;
