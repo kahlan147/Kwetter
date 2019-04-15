@@ -36,8 +36,7 @@ public class UserService {
 
     public List<User> getAllUsers(){return userDao.getAllUsers();}
 
-    public boolean updateUser(long id, User user){
-        user.setId(id);
+    public boolean updateUser(User user){
         return userDao.updateUser(user);
     }
 

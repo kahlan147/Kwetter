@@ -24,7 +24,10 @@ export class UserService {
       .pipe(retry(1),catchError(this.handleError))
   }
 
-  createUser(user): Observable<any> {
+  createUser(username: String, password: String): Observable<any> {
+    let user = new User();
+    user.name = username;
+    user.password = password;
     return this.http.post<User>(this.apiURL, JSON.stringify(user), this.httpOption)
       .pipe(
         retry(1),
@@ -57,15 +60,15 @@ export class UserService {
       )
   }
 
-  updateUser(user) : Observable<User>{
-    return this.http.put<User>(this.apiURL + '/' + user.id, JSON.stringify(user), this.httpOption)
+  updateUser(user){
+    return this.http.put<User>(this.apiURL, JSON.stringify(user), this.httpOption)
       .pipe(
         retry(1),
         catchError(this.handleError)
       )
   }
 
-  addFollower(user, id) : Observable<User>{
+  follow(user, id) : Observable<User>{
     return this.http.put<User>(this.apiURL + '/' + user.id + "/follow/" + id, JSON.stringify(user), this.httpOption)
       .pipe(
         retry(1),
@@ -73,7 +76,7 @@ export class UserService {
       )
   }
 
-  removeFollower(user, id) : Observable<User>{
+  unFollow(user, id) : Observable<User>{
     return this.http.put<User>(this.apiURL + '/' + user.id + '/unfollow/' + id, JSON.stringify(user), this.httpOption)
       .pipe(
         retry(1),

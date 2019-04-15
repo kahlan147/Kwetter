@@ -1,22 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
-  <header>
-    <h1>{{title}}</h1>
-    <p>Search:</p>
+  <header *ngIf="loggedInUser != null">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <h1>{{title}}</h1>
+          <p>Search:</p>
+          <input #box (keyup)="getAllUsersByName(box.value)">
 
-    <input #box (keyup)="getAllUsersByName(box.value)">
+          <nav *ngIf="searching">
+            <ul *ngFor="let user of foundUsers">
+              <a [routerLink]="[ 'profile', user.id]" routerlinkactive="true"> {{user.name}}</a>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-4">
+          <button [routerLink]="[ 'profile', loggedInUser.id]">My profile</button>
+          <button routerLink="home">Home</button>
+        </div>
 
-    <nav *ngIf="searching">
-      <ul *ngFor="let user of foundUsers">
-        <li>{{user.name}}</li>
-      </ul>
-    </nav>
-
-    <div *ngIf="loggedInUser != null">
-      <p>Welcome {{loggedInUser.name}}</p>
-      <button (click)="logout()">Logout</button>
+        <div class="col-4">
+          <p>Welcome {{loggedInUser.name}}</p>
+          <button class="btn btn-danger" (click)="logout()">Logout</button>
+        </div>
+      </div>
     </div>
-
   </header>
   <section>
     <router-outlet></router-outlet>

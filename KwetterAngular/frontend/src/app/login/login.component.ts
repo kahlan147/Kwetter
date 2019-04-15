@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CookieService} from "ngx-cookie-service";
 import { UserService} from "../shared/user.service";
 import { Router } from "@angular/router";
+import {User} from "../shared/user";
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,10 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  private username: String;
-  private password: String;
+  public username: String;
+  public password: String;
+  public loginButton: boolean = false;
+  public registerButton: boolean = false;
 
   constructor(public userService: UserService, private cookieService: CookieService, private router: Router) {
     if(this.cookieService.get("LoggedInUser") != ''){
@@ -22,7 +25,18 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  OnClick_LogIn(){
+  ButtonClicked(){
+    if(this.loginButton){
+      this.loginButton = false;
+      this.login();
+    }
+    else if(this.registerButton){
+      this.registerButton = false;
+      this.register();
+    }
+  }
+
+  private login(){
     new Promise(() => {
       this.userService.login(this.username, this.password).toPromise().then(
         res => {
@@ -33,10 +47,14 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  OnClick_Register(){
-    console.log("data: ");
-    console.log(this.username);
-    console.log(this.password);
+  private register(){
+    new Promise(()=>{
+      this.userService.createUser(this.username, this.password).toPromise().then(
+        res => {
+          this.login();
+        }
+      )
+    })
   }
 
 }

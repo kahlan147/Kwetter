@@ -1,13 +1,17 @@
 
 <body>
 <p>-----------------------------------------------------------------</p>
-<div class="border" *ngIf="allDataFetched">
-  <div class="border">
+<div class="container" *ngIf="allDataFetched">
+  <div class="">
 
-    <div class="border">
-      <div class="border">
+    <div class="">
+      <div class="">
         <p>What's happening?</p>
-        <textarea></textarea>
+        <form (ngSubmit)="createKweet()" [ngFormOptions]="{updateOn:'submit'}">
+          <input type="text" [(ngModel)]="newKweetMessage" placeholder="What's happening?"
+                 style="align-items: flex-end" class="form-control" name="newKweet"/>
+          <input type="submit">
+        </form>
       </div>
 
       <div class="border">
@@ -18,6 +22,9 @@
     <div class="border">
       <div>
         <p>Your kweets</p>
+        <ul *ngFor="let kweet of last10Kweets">
+          <li>{{kweet.message}}</li>
+        </ul>
       </div>
 
       <div>

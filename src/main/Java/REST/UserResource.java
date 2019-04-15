@@ -51,9 +51,8 @@ public class UserResource {
     }
 
     @PUT
-    @Path("{id}")
-    public boolean updateUser(@PathParam("id")long id, User user){
-        return userService.updateUser(id, user);
+    public boolean updateUser(User user){
+        return userService.updateUser(user);
     }
 
     @PUT
