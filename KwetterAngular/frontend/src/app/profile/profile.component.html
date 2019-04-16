@@ -1,79 +1,74 @@
 
-<div *ngIf="finishedLoading">
+<div *ngIf="finishedLoading" class="container">
+  <div class="row">
+    <div class="col-6">
 
-  <div>
+      <div *ngIf="!myPage" class="border">
+        <p>Details</p>
+        <p>Name: {{profileUser.name}}</p>
+        <p>Location: {{profileUser.location}}</p>
+        <p>Website: {{profileUser.website}}</p>
+        <p>Bio: {{profileUser.bio}}</p>
 
-    <div>
-      <p>{{profileUser.name}}</p>
-      <!--<div *ngIf="!myPage">
-        <input *ngIf="isFollowing" type="button" (click)="unfollow()" value="unfollow" />
-        <input *ngIf="!isFollowing" type="button" (click)="follow()" value="follow" />
-      </div>-->
-    </div>
-
-    <div>
-      <p>Kweets</p>
-      <ul *ngFor="let post of profilePosts">
-        <li>{{post.message}}</li>
-      </ul>
-    </div>
-
-
-  </div>
-
-  <div>
-
-    <div *ngIf="!myPage">
-      <p>Details</p>
-      <p>Name: {{profileUser.name}}</p>
-      <p>Location: {{profileUser.location}}</p>
-      <p>Website: {{profileUser.website}}</p>
-      <p>Bio: {{profileUser.bio}}</p>
-    </div>
-
-    <div *ngIf="myPage">
-      <form (ngSubmit)="updateUser()" [ngFormOptions]="{updateOn:'submit'}">
-
-        <div class="form-horizontal">
-          <label for="name">Name: </label>
-          <input id="name" type="text" style="align-items: flex-end" class="form-control"
-                 [(ngModel)]="profileUser.name" name="name">
+        <div>
+          <!--<div *ngIf="!myPage">
+            <input *ngIf="isFollowing" type="button" (click)="unfollow()" value="unfollow" />
+            <input *ngIf="!isFollowing" type="button" (click)="follow()" value="follow" />
+          </div>-->
         </div>
-        <div class="form-horizontal">
-          <label for="location">Location: </label>
-          <input id="location" type="text" style="align-items: flex-end" class="form-control"
-                 [(ngModel)]="profileUser.location" name="location">
-        </div>
-        <div class="form-horizontal">
-          <label for="website">Website: </label>
-          <input id="website" type="text" style="align-items: flex-end" class="form-control"
-                 [(ngModel)]="profileUser.website" name="website">
-        </div>
-        <div class="form-horizontal">
-          <label for="bio">Bio: </label>
-          <input id="bio" type="text" style="align-items: flex-end" class="form-control"
-                 [(ngModel)]="profileUser.bio" name="bio">
-        </div>
-        <button type="submit" class="btn btn-outline-primary btn-lg btn-block"> Update </button>
-      </form>
-    </div>
-<p></p>
-    <div>
-      <input type="button" (click)="showData(1)" value="Followers: {{amountFollowers}}" style="background:none; border:none;" />
-      <input type="button" (click)="showData(2)" value="Following: {{amountFollowing}}" style="background:none; border:none;" />
-      <input type="button" (click)="showData(3)" value="Kweets: {{amountKweets}}" style="background:none; border:none;" />
-    </div>
+      </div>
 
-    <div>
-      <ul *ngFor="let something of shownList">
-        <li *ngIf="userOrPost">{{something.name}}</li>
-        <li *ngIf="!userOrPost">{{something.message}}</li>
+      <div *ngIf="myPage" class="border">
+        <form (ngSubmit)="updateUser()" [ngFormOptions]="{updateOn:'submit'}">
 
-      </ul>
+          <div class="form-horizontal">
+            <label for="name">Name: </label>
+            <input id="name" type="text" style="align-items: flex-end" class="form-control"
+                   [(ngModel)]="profileUser.name" name="name">
+          </div>
+          <div class="form-horizontal">
+            <label for="location">Location: </label>
+            <input id="location" type="text" style="align-items: flex-end" class="form-control"
+                   [(ngModel)]="profileUser.location" name="location">
+          </div>
+          <div class="form-horizontal">
+            <label for="website">Website: </label>
+            <input id="website" type="text" style="align-items: flex-end" class="form-control"
+                   [(ngModel)]="profileUser.website" name="website">
+          </div>
+          <div class="form-horizontal">
+            <label for="bio">Bio: </label>
+            <input id="bio" type="text" style="align-items: flex-end" class="form-control"
+                   [(ngModel)]="profileUser.bio" name="bio">
+          </div>
+          <p></p>
+          <button type="submit" class="btn btn-outline-primary btn-lg btn-block"> Update </button>
+        </form>
+      </div>
+
+    </div>
+    <div class="col-6">
+
+      <div>
+        <div>
+          <input type="button" (click)="showData(1)" value="Followers: {{amountFollowers}}" style="background:none; border:none;" />
+          <input type="button" (click)="showData(2)" value="Following: {{amountFollowing}}" style="background:none; border:none;" />
+          <input type="button" (click)="showData(3)" value="Kweets: {{amountKweets}}" style="background:none; border:none;" />
+        </div>
+
+        <div class="overflow-auto" style="height:300px;">
+          <table class="table border">
+            <tr *ngFor="let something of shownList">
+              <td *ngIf="userOrPost"><a [routerLink]="[ '/profile', something.id]" routerlinkactive="true"> {{something.name}}</a>
+              </td>
+              <td *ngIf="!userOrPost">{{something.message}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
 
     </div>
 
   </div>
-
-
 </div>

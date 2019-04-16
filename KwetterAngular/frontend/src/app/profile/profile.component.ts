@@ -38,6 +38,8 @@ export class ProfileComponent implements OnInit {
   constructor(private route: ActivatedRoute, private userService: UserService,
               private cookieService: CookieService, private router: Router,
               private postService: PostService) {
+
+
     if(this.cookieService.get("LoggedInUser") == ''){
       this.router.navigateByUrl("/login");
     }

@@ -1,46 +1,73 @@
 
 <body>
-<p>-----------------------------------------------------------------</p>
 <div class="container" *ngIf="allDataFetched">
-  <div class="">
+  <div class="row">
 
-    <div class="">
-      <div class="">
+    <div class="col-6">
+      <div class="col-12" style="padding-top: 50px; padding-bottom: 50px;">
         <p>What's happening?</p>
         <form (ngSubmit)="createKweet()" [ngFormOptions]="{updateOn:'submit'}">
           <input type="text" [(ngModel)]="newKweetMessage" placeholder="What's happening?"
                  style="align-items: flex-end" class="form-control" name="newKweet"/>
+          <p></p>
           <input type="submit">
         </form>
       </div>
 
-      <div class="border">
+      <div class="col-12">
         <p>Timeline</p>
       </div>
     </div>
 
-    <div class="border">
-      <div>
-        <p>Your kweets</p>
-        <ul *ngFor="let kweet of last10Kweets">
-          <li>{{kweet.message}}</li>
-        </ul>
+    <div class="col-6">
+      <div class="col-12 whiteSpace">
+        <table class="table border">
+          <tr class="table-primary">
+            <th scope="col">Kweets</th>
+          </tr>
+          <div class="overflow-auto" style="height:150px;">
+            <table class="table border">
+              <tr *ngFor="let kweet of last10Kweets">
+                <td class="noPadding">{{kweet.date}}</td>
+                <td class="noPadding">{{kweet.message}}</td>
+              </tr>
+            </table>
+          </div>
+        </table>
       </div>
 
-      <div>
-        <p>Followers</p>
-        <ul *ngFor="let user of followers">
-          <li>{{user.id}}</li>
-          <li>{{user.name}}</li>
-        </ul>
+      <div class="col-12 whiteSpace">
+        <table class="table border">
+          <tr class="table-primary">
+            <th scope="col">Followers</th>
+          </tr>
+        <div class="overflow-auto" style="height:150px;">
+          <table class="table border">
+              <tr *ngFor="let user of followers">
+                <td class="noPadding">
+                  <a  [routerLink]="[ 'profile', user.id]" routerlinkactive="true"> {{user.name}}</a>
+                </td>
+              </tr>
+          </table>
+        </div>
+        </table>
       </div>
 
-      <div>
-        <p>Following</p>
-        <ul *ngFor="let user of following">
-          <li>{{user.id}}</li>
-          <li>{{user.name}}</li>
-        </ul>
+      <div class="col-12 whiteSpace">
+        <table class="table border">
+          <tr class="table-primary">
+            <th scope="col">Following</th>
+          </tr>
+          <div class="overflow-auto" style="height:150px;">
+            <table class="table border">
+              <tr *ngFor="let user of following">
+                <td class="noPadding">
+                  <a [routerLink]="[ 'profile', user.id]" routerlinkactive="true"> {{user.name}}</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </table>
       </div>
     </div>
 
