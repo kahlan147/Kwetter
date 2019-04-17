@@ -50,7 +50,7 @@ export class ProfileComponent implements OnInit {
       }
     })
   }
-//
+
   ngOnInit() {
       var id;
       this.route.paramMap.subscribe( params => id = params.get('id'));
