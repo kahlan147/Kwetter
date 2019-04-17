@@ -1,0 +1,31 @@
+<div class="container ">
+  <div class="row whiteSpace">
+    <div class="col-3">
+    </div>
+    <div class="col-6 whiteSpace">
+        <form (ngSubmit)="ButtonClicked()" [ngFormOptions]="{updateOn:'submit'}">
+          <div class="form-horizontal">
+            <label for="loginUN">Username: </label>
+            <input id="loginUN" type="text" style="align-items: flex-end" class="form-control"
+                   placeholder="Enter Username" required [(ngModel)]="username" name="username">
+          </div>
+
+          <p></p>
+
+          <div class="form-horizontal">
+            <label for="LoginPW">Password: </label>
+            <input id="LoginPW" type="password" class="form-control"
+                   placeholder="Enter Password" required [(ngModel)]="password" name="password">
+          </div>
+
+          <div class="form-horizontal whiteSpace">
+            <button type="submit" class="btn btn-outline-primary btn-lg btn-block" (click)="loginButton=true">Login</button>
+            <button type="submit" class="btn btn-outline-primary btn-lg btn-block" (click)="registerButton=true">Register</button>
+          </div>
+        </form>
+    </div>
+    <div class="col-3">
+
+    </div>
+  </div>
+</div>

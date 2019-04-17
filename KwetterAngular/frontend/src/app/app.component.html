@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <header *ngIf="loggedInUser != null" >
+    <div class="container" style="background-color:dodgerblue">
+      <div class="row">
+        <div class="col-3">
+          <h1>{{title}}</h1>
+        </div>
+        <div class="col-3 whiteSpace">
+          <label>Search:</label>
+          <input #box (keyup)="getAllUsersByName(box.value)">
+          <div *ngIf="searching" class="overflow-auto border" style="max-height:100px; background-color:white;">
+            <table class="table border" style="margin-bottom:0">
+              <tr *ngFor="let user of foundUsers">
+                <td class="noPadding"><a [routerLink]="[ 'profile', user.id]" routerlinkactive="true"> {{user.name}}</a> </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="col-4 whiteSpace" >
+          <button [routerLink]="[ 'profile', loggedInUser.id]">My profile</button>
+          <button routerLink="home">Home</button>
+        </div>
+        <div class="col-2">
+          <p>Welcome {{loggedInUser.name}}</p>
+          <button class="btn btn-primary" (click)="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section >
+        <router-outlet></router-outlet>
+  </section>
+</div>
