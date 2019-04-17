@@ -24,6 +24,7 @@ export class AppComponent {
 
   private routerChanged(){
     try {
+
       this.loggedInUser = JSON.parse(this.cookieService.get("LoggedInUser"));
     }
     catch(e){
@@ -32,8 +33,8 @@ export class AppComponent {
   }
 
   public logout(){
-    this.loggedInUser = null;
     this.cookieService.delete("LoggedInUser");
+    this.loggedInUser = null;
     this.router.navigateByUrl("/login");
   }
 

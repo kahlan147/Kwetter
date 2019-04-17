@@ -15,7 +15,17 @@
       </div>
 
       <div class="col-12">
-        <p>Timeline</p>
+        <div class="overflow-auto" style="height:500px;">
+          <table class="table border">
+            <tr>
+              <th>Timeline</th>
+            </tr>
+            <tr *ngFor="let kweet of allKweets">
+              <td class="noPadding">{{kweet.date}}</td>
+              <td class="noPadding">{{kweet.message}}</td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -45,7 +55,7 @@
           <table class="table border">
               <tr *ngFor="let user of followers">
                 <td class="noPadding">
-                  <a  [routerLink]="[ 'profile', user.id]" routerlinkactive="true"> {{user.name}}</a>
+                  <a  [routerLink]="[ '/profile', user.id]" routerlinkactive="true"> {{user.name}}</a>
                 </td>
               </tr>
           </table>
@@ -62,7 +72,7 @@
             <table class="table border">
               <tr *ngFor="let user of following">
                 <td class="noPadding">
-                  <a [routerLink]="[ 'profile', user.id]" routerlinkactive="true"> {{user.name}}</a>
+                  <a [routerLink]="[ '/profile', user.id]" routerlinkactive="true"> {{user.name}}</a>
                 </td>
               </tr>
             </table>

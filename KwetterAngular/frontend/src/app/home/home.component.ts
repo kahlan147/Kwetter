@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
 
   public allDataFetched: boolean = false;
   public last10Kweets: any = [];
+  public allKweets: any = [];
   public followers: any = [];
   public following: any = [];
   public loggedInUser: User;
@@ -47,8 +48,19 @@ export class HomeComponent implements OnInit {
   public loadFollowing(id: bigint){
     this.userService.getFollowings(id).subscribe(data => {
       this.following = data;
-      this.loadLast10Kweets();
+      this.loadAllKweets();
     })
+  }
+
+  public loadAllKweets(){
+    new Promise(()=>{
+      this.postService.getAllPosts(this.loggedInUser.id).toPromise().then(
+        res => {
+          this.allKweets = res;
+          this.loadLast10Kweets()
+        }
+      )
+    });
   }
 
   public loadLast10Kweets(){

@@ -36,15 +36,17 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  private login(){
-    new Promise(() => {
-      this.userService.login(this.username, this.password).toPromise().then(
-        res => {
-          this.cookieService.set("LoggedInUser", JSON.stringify(res));
-          this.router.navigateByUrl("/home")
-        }
-      )
-    });
+  private login() {
+    this.userService.loginAuth(this.username, this.password).toPromise().then(
+      res => {
+        this.userService.login(this.username, this.password).toPromise().then(
+          res => {
+            this.cookieService.set("LoggedInUser", JSON.stringify(res));
+            this.router.navigateByUrl("/home")
+          }
+        );
+      }
+    )
   }
 
   private register(){

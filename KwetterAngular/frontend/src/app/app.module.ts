@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { CookieService } from 'ngx-cookie-service';
 import {AppRoutingModule} from "./app-routing.module";
+import {JwtModule} from "@auth0/angular-jwt";
 
 
 @NgModule({
@@ -21,7 +22,15 @@ import {AppRoutingModule} from "./app-routing.module";
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: function  tokenGetter() {
+          return     localStorage.getItem('access_token');},
+        whitelistedDomains: ['localhost:3000'],
+        blacklistedRoutes: ['http://localhost:3000/auth/login']
+      }
+    })
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

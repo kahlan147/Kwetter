@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import {retry, catchError, tap} from 'rxjs/operators';
 import { User } from '../shared/user';
+import {CookieService} from "ngx-cookie-service";
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +12,37 @@ export class UserService {
 
   apiURL = '//localhost:8080/Kwetter/api/users';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cookieService: CookieService) { }
 
   httpOption ={
     headers: new HttpHeaders({
       'Content-Type':'application/json'
     })
   };
+
+  httpOptionAuth ={
+    headers: new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization': this.cookieService.get('access_token')
+    })
+  };
+
+  loginAuth(username: String, password: String): Observable<any>{
+    return this.http.post<{access_token: string}>(this.apiURL + "/loginAuth/" + username + "/" + password, null, this.httpOptionAuth)
+      .pipe(tap(res =>{
+        this.cookieService.set('access_token', res.access_token);
+      }),retry(1),catchError(this.handleError));
+  }
+
+  createUserAuth(username: String, password: String): Observable<any> {
+    let user = new User();
+    user.name = username;
+    user.password = password;
+    return this.http.post<{access_token}>(this.apiURL, JSON.stringify(user), this.httpOptionAuth)
+      .pipe(tap(res =>{
+        this.loginAuth(username, password);
+      }),retry(1),catchError(this.handleError));
+  }
 
   login(username: String, password: String){
     return this.http.get(this.apiURL + "/login/" + username + "/" + password)
