@@ -7,8 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ef8d406-11c5-4a9c-8f61-63d5c41f8993" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/Java/Websocket/ServerEndPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KwetterAngular/frontend/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/KwetterAngular/frontend/src/polyfills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/REST/JAXRSconfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/REST/JAXRSconfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/Websocket/ServerEndPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/Websocket/ServerEndPoint.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="320">
+              <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
                 <element signature="n#!!block;n#loadUser#0;n#HomeComponent#0" />
@@ -53,14 +57,42 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/websocket/websocket.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Java/Websocket/ServerEndPoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="192">
+              <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#734#735#0" expanded="true" />
-                <element signature="e#769#770#0" expanded="true" />
+                <element signature="e#889#890#0" expanded="true" />
+                <element signature="e#924#925#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,8 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/KwetterAngular/AngularKwetter/src/app/home/index.ts" />
-        <option value="$PROJECT_DIR$/KwetterAngular/AngularKwetter/src/app/app.component.spec.ts" />
         <option value="$PROJECT_DIR$/KwetterAngular/AngularKwetter/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/KwetterAngular/AngularKwetter/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/KwetterAngular/AngularKwetter/angular-cli.json" />
@@ -136,15 +166,17 @@
         <option value="$PROJECT_DIR$/src/main/Java/REST/CORSfilter.java" />
         <option value="$PROJECT_DIR$/src/main/Java/REST/CORSFilter.java" />
         <option value="$PROJECT_DIR$/KwetterAngular/frontend/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.ts" />
-        <option value="$PROJECT_DIR$/src/main/Java/REST/JAXRSconfig.java" />
         <option value="$PROJECT_DIR$/src/main/Java/REST/UserResource.java" />
         <option value="$PROJECT_DIR$/KwetterAngular/frontend/src/app/shared/user.service.ts" />
         <option value="$PROJECT_DIR$/KwetterAngular/frontend/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/KwetterAngular/frontend/src/app/login/login.component.ts" />
-        <option value="$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.html" />
         <option value="$PROJECT_DIR$/KwetterAngular/frontend/src/app/profile/profile.component.ts" />
+        <option value="$PROJECT_DIR$/KwetterAngular/frontend/src/polyfills.ts" />
+        <option value="$PROJECT_DIR$/src/main/Java/REST/JAXRSconfig.java" />
+        <option value="$PROJECT_DIR$/KwetterAngular/frontend/src/app/websocket/websocket.service.ts" />
+        <option value="$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.ts" />
         <option value="$PROJECT_DIR$/src/main/Java/Websocket/ServerEndPoint.java" />
+        <option value="$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.html" />
       </list>
     </option>
   </component>
@@ -180,7 +212,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
-    <option name="width" value="1132" />
+    <option name="width" value="977" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
@@ -238,7 +270,7 @@
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kwetter" type="b2602c69:ProjectViewProjectNode" />
@@ -247,7 +279,7 @@
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="websocket" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kwetter" type="b2602c69:ProjectViewProjectNode" />
@@ -283,6 +315,14 @@
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="Service" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="kwetter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="Websocket" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -298,7 +338,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557138015244" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557145844360" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="editor.config.ad.shown" value="true" />
@@ -321,15 +361,15 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="B:\School\S6\JEA\Kwetter\KwetterAngular\frontend\src\app\websocket" />
       <recent name="B:\School\S6\JEA\Kwetter\KwetterAngular\frontend\src\app\shared" />
       <recent name="B:\School\S6\JEA\Kwetter\src\main\webapp\main" />
       <recent name="B:\School\S6\JEA\Kwetter\KwetterAngular\frontend\src\app" />
       <recent name="B:\School\S6\JEA\Kwetter\KwetterAngular\AngularKwetter\src\app\services" />
-      <recent name="B:\School\S6\JEA\Kwetter\src\main\resources\css" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="B:\School\S6\JEA\Kwetter\src\main\webapp\main" />
@@ -653,7 +693,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286683000" />
+    <option name="totallyTimeSpent" value="294392000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -668,7 +708,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.152349" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16510066" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -680,7 +720,7 @@
       <window_info anchor="bottom" id="Spring" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" weight="0.34560907" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.2719547" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -692,7 +732,7 @@
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32719547" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.4986577" visible="true" weight="0.21104816" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.4986577" weight="0.21104816" />
       <window_info anchor="bottom" id="Statistic" order="15" weight="0.3286119" />
       <window_info anchor="bottom" id="TypeScript" order="16" weight="0.37911302" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -753,8 +793,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/services/user.service.ts" />
-    <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/user-list/user-list.component.html" />
     <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/user-list/user-list.component.ts" />
     <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/user-create/user-create.component.html" />
     <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/user-create/user-create.component.ts" />
@@ -978,13 +1016,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/REST/CORSFilter.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/Java/REST/JAXRSconfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/REST/UserResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -1067,20 +1098,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="78" column="16" lean-forward="true" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1106,10 +1123,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/REST/JAXRSconfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/polyfills.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="62" column="3" lean-forward="true" selection-start-line="62" selection-start-column="3" selection-end-line="62" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/websocket/websocket.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="320">
+          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
             <element signature="n#!!block;n#loadUser#0;n#HomeComponent#0" />
@@ -1124,12 +1165,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/Websocket/ServerEndPoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="192">
+          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
-            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KwetterAngular/frontend/src/app/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

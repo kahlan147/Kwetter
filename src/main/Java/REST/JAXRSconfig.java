@@ -13,7 +13,7 @@ public class JAXRSconfig extends Application implements ContainerResponseFilter 
     @Override
     public void filter(ContainerRequestContext containerRequestContext, ContainerResponseContext containerResponseContext) throws IOException {
         containerResponseContext.getHeaders().add(
-                "Access-Control-Allow-Origin", "*");
+                "Access-Control-Allow-Origin", "http://localhost:4200");
         containerResponseContext.getHeaders().add(
                 "Access-Control-Allow-Credentials", "true");
         containerResponseContext.getHeaders().add(

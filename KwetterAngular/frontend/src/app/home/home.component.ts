@@ -5,12 +5,15 @@ import {CookieService} from "ngx-cookie-service";
 import {Router} from "@angular/router";
 import {PostService} from "../shared/post.service";
 import {Post} from "../shared/post";
+import {WebsocketService} from "../websocket/websocket.service";
+import {Observable, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
   public allDataFetched: boolean = false;
@@ -22,15 +25,30 @@ export class HomeComponent implements OnInit {
 
   public newKweetMessage: String;
 
+  public lastPostedKweet: Post;
+
+  private wsSubscription: Subscription;
+
   constructor(public userService: UserService, public postService: PostService,
-              private cookieService: CookieService, private router: Router) {
+              private cookieService: CookieService, private router: Router, private websocketService: WebsocketService) {
     if(this.cookieService.get("LoggedInUser") == ''){
       this.router.navigateByUrl("/login")
     }
+
+    this.wsSubscription = websocketService.createObservableSocket("ws://localhost:8080/Kwetter/api/ServerEndPoint")
+      .subscribe(
+        data => this.newKweet(data),
+        err => console.log('err'),
+        () => console.log('The observable stream is complete')
+      );
   }
 
   ngOnInit() {
     this.loadUser();
+  }
+
+  public newKweet(newKweet: string){
+      this.lastPostedKweet = <Post>JSON.parse(newKweet);
   }
 
   public loadUser(){
@@ -75,6 +93,7 @@ export class HomeComponent implements OnInit {
   }
 
   public createKweet(){
+    this.websocketService.sendMessage(JSON.stringify(this.newKweetMessage));
     new Promise(()=>{
       this.postService.createPost(this.newKweetMessage, this.loggedInUser).toPromise().then(
         res => {
@@ -82,7 +101,7 @@ export class HomeComponent implements OnInit {
           new Promise(()=>{
             this.postService.bindPost(post.id, this.loggedInUser.id).toPromise().then(
               res2 => {
-                window.location.reload();
+                //window.location.reload();
               }
             )
           })
