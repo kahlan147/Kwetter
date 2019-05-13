@@ -1,5 +1,7 @@
 package Classes;
 
+import org.springframework.hateoas.ResourceSupport;
+
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -15,7 +17,7 @@ import java.util.List;
 })
 
 @Entity
-public class User {
+public class User{
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

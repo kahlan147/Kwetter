@@ -21,7 +21,7 @@ export class PostService {
   constructor(private http: HttpClient) {
   }
 
-  getAllPosts(id){
+  getAllPosts(id): Observable<Post>{
     return this.http.get<Post>(this.apiURL + '/' + id + '/allposts')
       .pipe(
         retry(1),

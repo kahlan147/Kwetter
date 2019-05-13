@@ -9,11 +9,6 @@ import java.io.IOException;
 public class ServerEndPoint {
     @OnOpen
     public void onOpen(Session session){
-        /*try {
-            //session.getBasicRemote().sendText("Client is now connected...");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
     @OnMessage

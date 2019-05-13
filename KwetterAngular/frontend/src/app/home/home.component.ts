@@ -41,6 +41,10 @@ export class HomeComponent implements OnInit {
         err => console.log('err'),
         () => console.log('The observable stream is complete')
       );
+
+    let source = new EventSource('http://localhost:8080/Kwetter/api/events/broadcast');
+    source.addEventListener('event', aString => console.log(aString), false);
+
   }
 
   ngOnInit() {
@@ -49,6 +53,8 @@ export class HomeComponent implements OnInit {
 
   public newKweet(newKweet: string){
       this.lastPostedKweet = <Post>JSON.parse(newKweet);
+      this.allKweets.push(<Post>JSON.parse(newKweet));
+      console.log(<Post>JSON.parse(newKweet));
   }
 
   public loadUser(){
