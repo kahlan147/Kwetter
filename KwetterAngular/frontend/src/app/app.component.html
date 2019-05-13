@@ -12,13 +12,13 @@
           <div *ngIf="searching" class="overflow-auto border" style="max-height:100px; background-color:white;">
             <table class="table border" style="margin-bottom:0">
               <tr *ngFor="let user of foundUsers">
-                <td class="noPadding"><a [routerLink]="[ 'profile', user.id]" routerlinkactive="true"> {{user.name}}</a> </td>
+                <td class="noPadding"><a [routerLink]="['profile', user.userId]" routerlinkactive="true"> {{user.name}}</a> </td>
               </tr>
             </table>
           </div>
         </div>
         <div class="col-4 whiteSpace" >
-          <button [routerLink]="[ 'profile', loggedInUser.id]">My profile</button>
+          <button [routerLink]="['profile', loggedInUser.userId]">My profile</button>
           <button routerLink="home">Home</button>
         </div>
         <div class="col-2">

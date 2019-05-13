@@ -57,7 +57,7 @@
           <table class="table border">
               <tr *ngFor="let user of followers">
                 <td class="noPadding">
-                  <a  [routerLink]="[ '/profile', user.id]" routerlinkactive="true"> {{user.name}}</a>
+                  <a  [routerLink]="[ '/profile', user.userId]" routerlinkactive="true"> {{user.name}}</a>
                 </td>
               </tr>
           </table>
@@ -74,7 +74,7 @@
             <table class="table border">
               <tr *ngFor="let user of following">
                 <td class="noPadding">
-                  <a [routerLink]="[ '/profile', user.id]" routerlinkactive="true"> {{user.name}}</a>
+                  <a [routerLink]="[ '/profile', user.userId]" routerlinkactive="true"> {{user.name}}</a>
                 </td>
               </tr>
             </table>

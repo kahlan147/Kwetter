@@ -1,10 +1,16 @@
 package Classes;
 
 
+import REST.UserResource;
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.ResourceSupport;
+
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 
 /**
  * Created by Niels Verheijen on 11/02/2019.
@@ -16,7 +22,7 @@ import java.util.List;
 })
 
 @Entity
-public class User{
+public class User extends ResourceSupport {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userId;
@@ -97,6 +103,8 @@ public class User{
 
     public void addToFollowers(User user){
         followers.add(user);
+        //super.add(linkTo(UserResource.class).slash(user.getUserId()).withRel("Follower"));
+        super.add(new Link("http://localhost:8080/Kwetter/api/users/" + user.getUserId(), "Follower"));
     }
 
     public void removeFromFollowers(User user){
@@ -109,6 +117,8 @@ public class User{
 
     public void addToFollowing(User user){
         following.add(user);
+        //super.add(linkTo(UserResource.class).slash(user.getUserId()).withRel("Following"));
+        super.add(new Link("http://localhost:8080/Kwetter/api/users/" + user.getUserId(), "Following"));
         user.addToFollowers(this);
     }
 

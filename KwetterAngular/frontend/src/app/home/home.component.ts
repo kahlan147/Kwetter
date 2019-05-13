@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
         err => console.log('err'),
         () => console.log('The observable stream is complete')
       );
+
   }
 
   ngOnInit() {
@@ -55,21 +56,27 @@ export class HomeComponent implements OnInit {
 
   public loadUser(){
       this.loggedInUser = JSON.parse(this.cookieService.get("LoggedInUser"));
-      this.loadFollowers(this.loggedInUser.userId);
+      console.log(this.loggedInUser);
+      this.loadFollowersAndFollowing();
   }
 
-  public loadFollowers(id : bigint){
-    this.userService.getFollowers(id).subscribe(data => {
-      this.followers = data;
-      this.loadFollowing(id);
-    })
-  }
-
-  public loadFollowing(id: bigint){
-    this.userService.getFollowings(id).subscribe(data => {
-      this.following = data;
-      this.loadAllKweets();
-    })
+  public loadFollowersAndFollowing(){
+    this.loggedInUser.links.forEach((link) => {
+        if (link.rel === "Following") {
+          this.userService.getUserByUrl(link.href).subscribe(data => {
+            this.following.push(data);
+            console.log(data);
+          });
+        }
+        else if(link.rel === "Follower"){
+          this.userService.getUserByUrl(link.href).subscribe(data => {
+            console.log(data);
+            this.followers.push(data);
+          });
+        }
+      }
+    );
+    this.loadAllKweets();
   }
 
   public loadAllKweets(){
