@@ -1,6 +1,6 @@
 export class User {
 
-  public id: bigint;
+  public userId: bigint;
   public name : String;
   public password: String;
   public bio: String;

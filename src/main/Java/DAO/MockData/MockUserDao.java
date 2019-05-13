@@ -25,7 +25,7 @@ public class MockUserDao implements IUserDao {
     @Override
     public User createUser(User user) {
         users.add(user);
-        user.setId(users.size());
+        user.setUserId(users.size());
         return user;
     }
 
@@ -42,7 +42,7 @@ public class MockUserDao implements IUserDao {
 
     @Override
     public boolean updateUser(User user) {
-        users.set(Math.toIntExact(user.getId()), user);
+        users.set(Math.toIntExact(user.getUserId()), user);
         return true;
     }
 

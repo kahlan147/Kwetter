@@ -19,7 +19,7 @@ import java.util.List;
 public class User{
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long userId;
     private String name;
     private String password;
     private String bio;
@@ -39,12 +39,12 @@ public class User{
 
     // <editor-fold defaultstate="collapsed" desc="Gets Sets">
 
-    public void setId(long id){
-        this.id=id;
+    public void setUserId(long id){
+        this.userId =id;
     }
 
-    public long getId(){
-        return id;
+    public long getUserId(){
+        return userId;
     }
 
     public String getName() {
@@ -100,7 +100,7 @@ public class User{
     }
 
     public void removeFromFollowers(User user){
-        followers.removeIf(U -> (U.getId() == user.getId()));
+        followers.removeIf(U -> (U.getUserId() == user.getUserId()));
     }
 
     public List<User> getAllFollowers(){
@@ -113,7 +113,7 @@ public class User{
     }
 
     public void removeFromFollowing(User user){
-        following.removeIf(U -> (U.getId() == user.getId()));
+        following.removeIf(U -> (U.getUserId() == user.getUserId()));
         user.removeFromFollowers(this);
     }
 
@@ -158,8 +158,8 @@ public class User{
         setMod(true);
     }
 
-    public User(long id, String name, String password, String bio, String location, String website, boolean isMod){
-        setId(id);
+    public User(long userId, String name, String password, String bio, String location, String website, boolean isMod){
+        setUserId(userId);
         setName(name);
         setPassword(password);
         setBio(bio);

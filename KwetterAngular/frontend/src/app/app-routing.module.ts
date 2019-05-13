@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'profile/:id', component: ProfileComponent, runGuardsAndResolvers: 'always'},
+  {path: 'profile/:userId', component: ProfileComponent, runGuardsAndResolvers: 'always'},
   ];
 
 @NgModule({

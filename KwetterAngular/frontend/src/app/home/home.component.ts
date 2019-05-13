@@ -41,10 +41,6 @@ export class HomeComponent implements OnInit {
         err => console.log('err'),
         () => console.log('The observable stream is complete')
       );
-
-    let source = new EventSource('http://localhost:8080/Kwetter/api/events/broadcast');
-    source.addEventListener('event', aString => console.log(aString), false);
-
   }
 
   ngOnInit() {
@@ -59,7 +55,7 @@ export class HomeComponent implements OnInit {
 
   public loadUser(){
       this.loggedInUser = JSON.parse(this.cookieService.get("LoggedInUser"));
-      this.loadFollowers(this.loggedInUser.id);
+      this.loadFollowers(this.loggedInUser.userId);
   }
 
   public loadFollowers(id : bigint){
@@ -78,7 +74,7 @@ export class HomeComponent implements OnInit {
 
   public loadAllKweets(){
     new Promise(()=>{
-      this.postService.getAllPosts(this.loggedInUser.id).toPromise().then(
+      this.postService.getAllPosts(this.loggedInUser.userId).toPromise().then(
         res => {
           this.allKweets = res;
           this.loadLast10Kweets()
@@ -89,7 +85,7 @@ export class HomeComponent implements OnInit {
 
   public loadLast10Kweets(){
     new Promise(()=>{
-      this.postService.getLast10Posts(this.loggedInUser.id).toPromise().then(
+      this.postService.getLast10Posts(this.loggedInUser.userId).toPromise().then(
         res => {
           this.last10Kweets = res;
           this.allDataFetched = true;
@@ -105,7 +101,7 @@ export class HomeComponent implements OnInit {
         res => {
           let post= <Post>res;
           new Promise(()=>{
-            this.postService.bindPost(post.id, this.loggedInUser.id).toPromise().then(
+            this.postService.bindPost(post.id, this.loggedInUser.userId).toPromise().then(
               res2 => {
                 //window.location.reload();
               }

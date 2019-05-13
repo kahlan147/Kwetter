@@ -27,17 +27,17 @@ public class IUserDaoTest {
     @Test
     public void createUser(){
         userDao.createUser(user1);
-        User returnedUser = userDao.getUser(user1.getId());
+        User returnedUser = userDao.getUser(user1.getUserId());
         assertEquals(user1, returnedUser);
     }
 
     @Test
     public void deleteUser(){
         userDao.createUser(user1);
-        User returnedUser = userDao.getUser(user1.getId());
+        User returnedUser = userDao.getUser(user1.getUserId());
         assertEquals(user1, returnedUser);
         userDao.deleteUser(user1);
-        returnedUser = userDao.getUser(user1.getId());
+        returnedUser = userDao.getUser(user1.getUserId());
         assertNotEquals(returnedUser, user1);
     }
 
@@ -46,7 +46,7 @@ public class IUserDaoTest {
         userDao.createUser(user1);
         user1.setName("Testboy2");
         userDao.updateUser(user1);
-        User returnedUser = userDao.getUser(user1.getId());
+        User returnedUser = userDao.getUser(user1.getUserId());
         assertEquals(returnedUser.getName(), "Testboy2");
 
     }
@@ -54,7 +54,7 @@ public class IUserDaoTest {
     @Test
     public void getUser(){
         userDao.createUser(user1);
-        User returnedUser = userDao.getUser(user1.getId());
+        User returnedUser = userDao.getUser(user1.getUserId());
         assertEquals(user1, returnedUser);
     }
 

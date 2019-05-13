@@ -70,7 +70,7 @@ export class ProfileComponent implements OnInit {
   getUser(id){
     this.userService.getUser(id).subscribe(data => {
       this.profileUser = data;
-      if(this.loggedInUser.id == this.profileUser.id){
+      if(this.loggedInUser.userId == this.profileUser.userId){
         this.myPage = true;
       }
       this.getPosts(id);
@@ -89,7 +89,7 @@ export class ProfileComponent implements OnInit {
     this.userService.getFollowers(id).subscribe(data => {
       this.profileFollowers = data;
       this.amountFollowers = (<Array<User>><unknown>this.profileFollowers).length;
-      try{(<Array<User>><unknown>this.profileFollowers).find(x => x.id == this.loggedInUser.id)}
+      try{(<Array<User>><unknown>this.profileFollowers).find(x => x.userId == this.loggedInUser.userId)}
       catch(e){
         this.isFollowing = false;
       }
@@ -135,7 +135,7 @@ export class ProfileComponent implements OnInit {
 
   follow(){
     new Promise(()=>{
-      this.userService.follow(this.loggedInUser, this.profileUser.id).toPromise().then(
+      this.userService.follow(this.loggedInUser, this.profileUser.userId).toPromise().then(
         res => {
           if(res){
             window.location.reload();
@@ -147,7 +147,7 @@ export class ProfileComponent implements OnInit {
 
   unfollow(){
     new Promise(()=>{
-      this.userService.unFollow(this.loggedInUser, this.profileUser.id).toPromise().then(
+      this.userService.unFollow(this.loggedInUser, this.profileUser.userId).toPromise().then(
         res => {
           if(res){
             window.location.reload();
