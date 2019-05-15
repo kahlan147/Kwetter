@@ -7,6 +7,7 @@ export class User {
   public location: String;
   public website: String;
   public isMod: boolean;
+  public links: any[];
 
   constructor(){
 

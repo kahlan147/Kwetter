@@ -77,6 +77,14 @@ export class UserService {
       )
   }
 
+  getUserByUrl(url){
+    return this.http.get<User>(url)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
   getUsersByName(name){
     return this.http.get<User>(this.apiURL + '/byName/' + name)
       .pipe(
@@ -94,7 +102,7 @@ export class UserService {
   }
 
   follow(user, id) : Observable<User>{
-    return this.http.put<User>(this.apiURL + '/' + user.id + "/follow/" + id, JSON.stringify(user), this.httpOption)
+    return this.http.put<User>(this.apiURL + '/' + user.userId + "/follow/" + id, JSON.stringify(user), this.httpOption)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -102,7 +110,7 @@ export class UserService {
   }
 
   unFollow(user, id) : Observable<User>{
-    return this.http.put<User>(this.apiURL + '/' + user.id + '/unfollow/' + id, JSON.stringify(user), this.httpOption)
+    return this.http.put<User>(this.apiURL + '/' + user.userId + '/unfollow/' + id, JSON.stringify(user), this.httpOption)
       .pipe(
         retry(1),
         catchError(this.handleError)
