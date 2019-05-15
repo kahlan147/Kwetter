@@ -65,12 +65,10 @@ export class HomeComponent implements OnInit {
         if (link.rel === "Following") {
           this.userService.getUserByUrl(link.href).subscribe(data => {
             this.following.push(data);
-            console.log(data);
           });
         }
         else if(link.rel === "Follower"){
           this.userService.getUserByUrl(link.href).subscribe(data => {
-            console.log(data);
             this.followers.push(data);
           });
         }
