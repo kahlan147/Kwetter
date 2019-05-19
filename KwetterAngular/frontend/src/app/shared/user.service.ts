@@ -60,6 +60,14 @@ export class UserService {
       )
   }
 
+  getUsersByURL(url: string): Observable<User>{
+    return this.http.get<User>(url)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
   getListUsers(): Observable<User> {
     return this.http.get<User>(this.apiURL)
       .pipe(

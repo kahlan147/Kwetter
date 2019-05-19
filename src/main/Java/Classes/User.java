@@ -1,10 +1,13 @@
 package Classes;
 
 
+import org.springframework.hateoas.Link;
+
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.hateoas.ResourceSupport;
 
 /**
  * Created by Niels Verheijen on 11/02/2019.
@@ -16,7 +19,7 @@ import java.util.List;
 })
 
 @Entity
-public class User{
+public class User extends ResourceSupport{
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userId;
@@ -26,6 +29,8 @@ public class User{
     private String location;
     private String website;
     private boolean isMod;
+
+    private boolean linksSet;
 
     @ManyToMany(mappedBy = "following")
     @JsonbTransient
@@ -97,6 +102,7 @@ public class User{
 
     public void addToFollowers(User user){
         followers.add(user);
+        createLinks();
     }
 
     public void removeFromFollowers(User user){
@@ -110,6 +116,7 @@ public class User{
     public void addToFollowing(User user){
         following.add(user);
         user.addToFollowers(this);
+        createLinks();
     }
 
     public void removeFromFollowing(User user){
@@ -169,6 +176,14 @@ public class User{
         followers = new ArrayList<>();
         following = new ArrayList<>();
         posts = new ArrayList<>();
+    }
+
+    public void createLinks(){
+        if(!linksSet){
+            super.add(new Link("http://localhost:8080/Kwetter/api/users/"+ getUserId() + "/followers", "Followers"));
+            super.add(new Link("http://localhost:8080/Kwetter/api/users/"+ getUserId() + "/followings", "Following"));
+            linksSet = true;
+        }
     }
 
 }

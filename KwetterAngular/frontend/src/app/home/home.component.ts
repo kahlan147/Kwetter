@@ -55,7 +55,27 @@ export class HomeComponent implements OnInit {
 
   public loadUser(){
       this.loggedInUser = JSON.parse(this.cookieService.get("LoggedInUser"));
-      this.loadFollowers(this.loggedInUser.userId);
+      console.log(this.loggedInUser);
+      //this.loadFollowers(this.loggedInUser.userId);
+    this.loadFollows();
+  }
+
+  public loadFollows(){
+    this.loggedInUser.links.forEach((link) => {
+      if (link.rel === "Following") {
+        this.userService.getUsersByURL(link.href).subscribe(data => {
+          this.following = data;//.push(data);
+          console.log(data);
+        });
+      }
+      else if(link.rel === "Followers"){
+        this.userService.getUsersByURL(link.href).subscribe(data => {
+          console.log(data);
+          this.followers = data;//.push(data);
+        });
+      }
+    });
+    this.loadAllKweets();
   }
 
   public loadFollowers(id : bigint){
